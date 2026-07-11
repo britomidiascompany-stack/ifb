@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório IFB-ICV-2026 · 11/07 | Brito Mídias × IFB</title>
+<style>
+  :root{
+    --bg:#0a0a0f; --bg-card:#13131a; --bg-soft:#1a1a24; --border:#2a2a36;
+    --text:#e8e8ee; --text-muted:#8a8a9a;
+    --purple:#7c3aed; --purple-light:#a78bfa; --purple-bg:rgba(124,58,237,.1);
+    --green:#10b981; --yellow:#f59e0b; --red:#ef4444; --blue:#3b82f6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  a{color:var(--purple-light);text-decoration:none}
+
+  /* header */
+  header{padding:56px 0 40px;border-bottom:1px solid var(--border);background:radial-gradient(1200px 400px at 50% -120px,rgba(124,58,237,.18),transparent)}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--purple-light);font-weight:600}
+  .badge-date{display:inline-block;margin:14px 0 18px;padding:6px 14px;background:var(--purple-bg);border:1px solid rgba(124,58,237,.35);border-radius:999px;font-size:13px;color:var(--purple-light);font-weight:500}
+  h1{font-size:40px;font-weight:800;letter-spacing:-.02em;line-height:1.05}
+  .sub{margin-top:14px;color:var(--text-muted);font-size:15px;max-width:720px}
+
+  section{padding:44px 0;border-bottom:1px solid var(--border)}
+  h2{font-size:22px;font-weight:700;letter-spacing:-.01em;display:flex;align-items:baseline;gap:10px}
+  h2 .num{color:var(--purple);font-weight:800}
+  .section-desc{color:var(--text-muted);font-size:14px;margin:8px 0 26px}
+
+  /* stat cards */
+  .grid{display:grid;gap:14px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .stat{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:20px}
+  .stat .lbl{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--text-muted);font-weight:600}
+  .stat .val{font-size:30px;font-weight:800;letter-spacing:-.02em;margin-top:8px}
+  .stat .foot{font-size:12.5px;color:var(--text-muted);margin-top:6px}
+  .stat.accent{border-color:rgba(124,58,237,.5);background:linear-gradient(180deg,rgba(124,58,237,.10),var(--bg-card))}
+  .val.green{color:var(--green)} .val.red{color:var(--red)} .val.purple{color:var(--purple-light)} .val.yellow{color:var(--yellow)}
+
+  /* tables */
+  .table-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+  .scroll{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px}
+  thead th{background:var(--bg-soft);color:var(--text-muted);font-size:11px;letter-spacing:.06em;text-transform:uppercase;text-align:right;padding:12px 14px;font-weight:700;white-space:nowrap}
+  thead th:first-child{text-align:left}
+  tbody td{padding:11px 14px;text-align:right;border-top:1px solid var(--border);white-space:nowrap}
+  tbody td:first-child{text-align:left;font-weight:500}
+  tbody tr:hover{background:rgba(124,58,237,.05)}
+  tfoot td{padding:12px 14px;text-align:right;border-top:2px solid var(--border);font-weight:800;background:var(--bg-soft)}
+  tfoot td:first-child{text-align:left}
+  .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700}
+  .p-green{background:rgba(16,185,129,.14);color:#5eead4}
+  .p-org{background:rgba(59,130,246,.14);color:#93c5fd}
+  .p-purple{background:var(--purple-bg);color:var(--purple-light)}
+  .p-mut{background:var(--bg-soft);color:var(--text-muted)}
+  .star{color:var(--yellow)}
+
+  /* composition bar */
+  .compbar{display:flex;height:44px;border-radius:12px;overflow:hidden;border:1px solid var(--border);margin-bottom:14px}
+  .compbar>div{display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff}
+  .seg-org{background:linear-gradient(90deg,#2563eb,#3b82f6)}
+  .seg-pago{background:linear-gradient(90deg,#7c3aed,#a78bfa)}
+
+  /* FUNNEL */
+  .funnel-wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:26px;align-items:center}
+  .funnel{position:relative}
+  .fstep{position:relative;height:66px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;margin-top:-1px}
+  .fstep .fl{font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;opacity:.9;font-weight:600}
+  .fstep .fv{font-size:22px;font-weight:800;letter-spacing:-.01em;line-height:1}
+  .f1{background:linear-gradient(90deg,#8b5cf6,#a78bfa);clip-path:polygon(0 0,100% 0,92% 100%,8% 100%)}
+  .f2{background:linear-gradient(90deg,#7c46ec,#9575e8);clip-path:polygon(8% 0,92% 0,84% 100%,16% 100%)}
+  .f3{background:linear-gradient(90deg,#6d3ae0,#8a63e0);clip-path:polygon(16% 0,84% 0,74% 100%,26% 100%)}
+  .f4{background:linear-gradient(90deg,#5f30d4,#7d52d6);clip-path:polygon(26% 0,74% 0,63% 100%,37% 100%)}
+  .f5{background:linear-gradient(90deg,#5326c4,#7143c9);clip-path:polygon(37% 0,63% 0,55% 100%,45% 100%)}
+  .conv{display:flex;flex-direction:column;gap:10px}
+  .conv .crow{display:flex;align-items:center;gap:12px;background:var(--bg-card);border:1px solid var(--border);border-radius:11px;padding:10px 14px}
+  .conv .cv{font-size:19px;font-weight:800;min-width:64px;color:var(--purple-light)}
+  .conv .cl{font-size:12.5px;color:var(--text-muted)}
+  .conv .crow.hot{border-color:rgba(245,158,11,.5);background:linear-gradient(180deg,rgba(245,158,11,.10),var(--bg-card))}
+  .conv .crow.hot .cv{color:var(--yellow)}
+
+  .note{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--purple);border-radius:10px;padding:16px 18px;font-size:14px;color:#cfcfda;margin-top:20px}
+  .note b{color:var(--text)}
+  .note.warn{border-left-color:var(--yellow)}
+  .note.warn b{color:var(--yellow)}
+  ul.clean{list-style:none;margin-top:8px}
+  ul.clean li{padding:6px 0 6px 22px;position:relative;font-size:14px;color:#cfcfda}
+  ul.clean li:before{content:"▸";position:absolute;left:0;color:var(--purple-light)}
+
+  .mini{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .mini .m{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:14px}
+  .mini .m .k{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--text-muted);font-weight:600}
+  .mini .m .v{font-size:18px;font-weight:800;margin-top:4px}
+
+  footer{padding:34px 0 60px;color:var(--text-muted);font-size:13px;text-align:center}
+  footer .big{color:var(--text);font-weight:700;margin-bottom:6px}
+
+  @media(max-width:720px){
+    h1{font-size:30px}
+    .g3,.g4{grid-template-columns:1fr 1fr}
+    .funnel-wrap{grid-template-columns:1fr}
+    .mini{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Brito Mídias × Instituto Fernanda Ben</div>
+    <div class="badge-date">📅 11/07/2026 · lançamento em andamento (carrinho aberto)</div>
+    <h1>Relatório IFB-ICV-2026</h1>
+    <p class="sub">Imersão Clínica de Valor — Ao Vivo com Fernanda Ben · Funil completo do lançamento pago · Meta Ads 08–11/07 + Hotmart 07–11/07</p>
+  </div>
+</header>
+
+<!-- 01 -->
+<section><div class="wrap">
+  <h2><span class="num">01.</span>Sumário do funil</h2>
+  <p class="section-desc">Resultado consolidado de 07 a 11/07 — ingresso + 4 order bumps.</p>
+  <div class="grid g3">
+    <div class="stat accent">
+      <div class="lbl">Ingressos vendidos</div>
+      <div class="val purple">148</div>
+      <div class="foot">7 via tráfego pago · 141 orgânico/lista</div>
+    </div>
+    <div class="stat">
+      <div class="lbl">Investimento Meta</div>
+      <div class="val">R$ 1.413,89</div>
+      <div class="foot">c/ imposto R$ 1.609,43 · 4 dias (08–11/07)</div>
+    </div>
+    <div class="stat">
+      <div class="lbl">Receita do funil (bruto)</div>
+      <div class="val green">R$ 7.392,13</div>
+      <div class="foot">176 itens · ingresso + order bumps</div>
+    </div>
+    <div class="stat">
+      <div class="lbl">Receita order bumps</div>
+      <div class="val">R$ 3.267,44</div>
+      <div class="foot">28 vendas · Mapa, Gravação, 2ª Cadeira, Curso</div>
+    </div>
+    <div class="stat">
+      <div class="lbl">Ticket médio do ingresso</div>
+      <div class="val">R$ 27,87</div>
+      <div class="foot">PIX 75% · cartão 24%</div>
+    </div>
+    <div class="stat">
+      <div class="lbl">CPA pago (pixel)</div>
+      <div class="val yellow">R$ 229,92</div>
+      <div class="foot">c/ imposto ÷ 7 vendas do pixel</div>
+    </div>
+  </div>
+  <div class="note warn">⚠️ <b>Leitura essencial:</b> este é um lançamento de <b>lista/orgânico</b>, não de tráfego. <b>107 das 148 vendas caíram em 07/07</b> — um dia antes de o pago começar (08/07). O tráfego (R$ 1.413) entrou pequeno e ainda em aprendizado, rendendo <b>7 vendas pelo pixel</b>. Portanto a receita do funil é ~95% orgânica; ela não deve ser lida como retorno do investimento pago.</div>
+</div></section>
+
+<!-- 02 -->
+<section><div class="wrap">
+  <h2><span class="num">02.</span>Composição das vendas do ingresso</h2>
+  <p class="section-desc">Origem dos 148 ingressos — tráfego pago (pixel Meta) vs orgânico/lista.</p>
+  <div class="compbar">
+    <div class="seg-org" style="width:95.3%">Orgânico / lista · 141 · 95,3%</div>
+    <div class="seg-pago" style="width:4.7%" title="Pago 7">7</div>
+  </div>
+  <div class="grid g2">
+    <div class="stat"><div class="lbl">Orgânico / lista</div><div class="val" style="color:#93c5fd">141 <span style="font-size:15px;color:var(--text-muted)">· 95,3%</span></div><div class="foot">Abertura de carrinho para lista/e-mail — pico em 07/07 (107 vendas)</div></div>
+    <div class="stat"><div class="lbl">Tráfego pago (pixel)</div><div class="val purple">7 <span style="font-size:15px;color:var(--text-muted)">· 4,7%</span></div><div class="foot">Campanha começou 08/07, ainda maturando</div></div>
+  </div>
+</div></section>
+
+<!-- 03 -->
+<section><div class="wrap">
+  <h2><span class="num">03.</span>Performance dia a dia</h2>
+  <p class="section-desc">Meta (investimento e pixel) vs Hotmart (ingressos aprovados) · período completo.</p>
+  <div class="table-card scroll">
+    <table>
+      <thead><tr><th>Data</th><th>Invest Meta</th><th>Compras pixel</th><th>CPA pixel</th><th>Ingressos Hotmart</th><th>Orgânico</th><th>Receita ingresso</th></tr></thead>
+      <tbody>
+        <tr><td>07/07</td><td>—</td><td>0</td><td>—</td><td>107</td><td>107</td><td>R$ 2.867,35</td></tr>
+        <tr><td>08/07</td><td>R$ 264,45</td><td>2</td><td>R$ 132,23</td><td>34</td><td>32</td><td>R$ 948,34</td></tr>
+        <tr><td>09/07</td><td>R$ 348,03</td><td>3</td><td>R$ 116,01</td><td>4</td><td>1</td><td>R$ 168,00</td></tr>
+        <tr><td>10/07</td><td>R$ 483,56</td><td>1</td><td>R$ 483,56</td><td>1</td><td>0</td><td>R$ 47,00</td></tr>
+        <tr><td>11/07 <span class="pill p-mut">em andamento</span></td><td>R$ 317,85</td><td>1</td><td>R$ 317,85</td><td>2</td><td>1</td><td>R$ 94,00</td></tr>
+      </tbody>
+      <tfoot><tr><td>TOTAL</td><td>R$ 1.413,89</td><td>7</td><td>R$ 201,98</td><td>148</td><td>141</td><td>R$ 4.124,69</td></tr></tfoot>
+    </table>
+  </div>
+  <div class="note">📈 <b>Leitura:</b> o volume real veio em 07/07 (abertura, 107 vendas orgânicas). Do dia 08 em diante o tráfego assumiu o topo, mas com <b>pixel sub-reportando</b> (7 no total) — típico de conta nova/pixel frio no início da campanha. CPA pixel alto porque a base de conversões ainda é pequena.</div>
+</div></section>
+
+<!-- 04 FUNIL -->
+<section><div class="wrap">
+  <h2><span class="num">04.</span>Funil de tráfego pago (Meta Ads)</h2>
+  <p class="section-desc">4 dias agregados · 08 a 11/07 — do impacto à compra rastreada pelo pixel.</p>
+  <div class="funnel-wrap">
+    <div class="funnel">
+      <div class="fstep f1"><div class="fl">Impressões</div><div class="fv">29.679</div></div>
+      <div class="fstep f2"><div class="fl">Cliques no link</div><div class="fv">362</div></div>
+      <div class="fstep f3"><div class="fl">Visualizações de página</div><div class="fv">280</div></div>
+      <div class="fstep f4"><div class="fl">Initiate checkout</div><div class="fv">30</div></div>
+      <div class="fstep f5"><div class="fl">Compras (pixel)</div><div class="fv">7</div></div>
+    </div>
+    <div class="conv">
+      <div class="crow"><span class="cv">1,22%</span><span class="cl">CTR · impressão → clique</span></div>
+      <div class="crow"><span class="cv">77,3%</span><span class="cl">clique → página</span></div>
+      <div class="crow"><span class="cv">10,7%</span><span class="cl">página → checkout</span></div>
+      <div class="crow"><span class="cv">23,3%</span><span class="cl">checkout → compra</span></div>
+      <div class="crow hot"><span class="cv">2,50%</span><span class="cl"><b>página → venda</b> (7 ÷ 280 visitas)</span></div>
+    </div>
+  </div>
+  <div class="mini" style="margin-top:24px">
+    <div class="m"><div class="k">Alcance</div><div class="v">26.707</div></div>
+    <div class="m"><div class="k">CPM (c/ imp.)</div><div class="v">R$ 54,23</div></div>
+    <div class="m"><div class="k">CPC (c/ imp.)</div><div class="v">R$ 4,45</div></div>
+    <div class="m"><div class="k">Custo / visita</div><div class="v">R$ 5,75</div></div>
+  </div>
+  <div class="note">🔎 <b>Conversão página → venda de 2,50%</b> (pixel) está baixa — esperado para campanha de 4 dias com pixel frio e criativos em teste. Considerando <b>todas as fontes</b> (148 vendas ÷ 280 visitas pagas), a página converte forte, mas isso mistura a demanda orgânica que também passou pela mesma página.</div>
+</div></section>
+
+<!-- 05 RECEITA POR PRODUTO -->
+<section><div class="wrap">
+  <h2><span class="num">05.</span>Receita por produto</h2>
+  <p class="section-desc">Ingresso (front-end) + 4 order bumps do funil · valor bruto Hotmart.</p>
+  <div class="table-card scroll">
+    <table>
+      <thead><tr><th>Produto</th><th>Papel</th><th>Vendas</th><th>Ticket</th><th>Receita</th><th>% receita</th></tr></thead>
+      <tbody>
+        <tr><td>Imersão Clínica de Valor</td><td><span class="pill p-purple">Ingresso</span></td><td>148</td><td>R$ 27,87</td><td>R$ 4.124,69</td><td>55,8%</td></tr>
+        <tr><td>Gravação Vitalícia da ICV</td><td><span class="pill p-green">Order bump</span></td><td>7</td><td>R$ 192,67</td><td>R$ 1.348,68</td><td>18,2%</td></tr>
+        <tr><td>Mapa Clínico do Emagrecimento</td><td><span class="pill p-green">Order bump</span></td><td>9</td><td>R$ 145,06</td><td>R$ 1.305,50</td><td>17,7%</td></tr>
+        <tr><td>Curso Os Pilares da Saúde</td><td><span class="pill p-green">Order bump</span></td><td>5</td><td>R$ 95,10</td><td>R$ 475,50</td><td>6,4%</td></tr>
+        <tr><td>Segunda Cadeira (convidada)</td><td><span class="pill p-green">Order bump</span></td><td>7</td><td>R$ 19,68</td><td>R$ 137,76</td><td>1,9%</td></tr>
+      </tbody>
+      <tfoot><tr><td>TOTAL DO FUNIL</td><td></td><td>176</td><td></td><td>R$ 7.392,13</td><td>100%</td></tr></tfoot>
+    </table>
+  </div>
+  <div class="note">🧩 Os 4 order bumps somam <b>28 vendas / R$ 3.267,44</b> — quase todos anexados à compra do ingresso. Taxa de anexação de order bump sobre 148 ingressos ≈ <b>19%</b>.</div>
+</div></section>
+
+<!-- 06 CRIATIVOS -->
+<section><div class="wrap">
+  <h2><span class="num">06.</span>Ranking de criativos</h2>
+  <p class="section-desc">10 criativos ativos (todos imagem · ADI) · ranqueados por compra no pixel.</p>
+  <div class="table-card scroll">
+    <table>
+      <thead><tr><th>Criativo</th><th>Compras</th><th>Invest</th><th>CPA</th><th>IC</th><th>CTR</th><th>Pg→IC</th></tr></thead>
+      <tbody>
+        <tr><td>ADI05 · Paciente entende o valor <span class="star">★</span></td><td>5</td><td>R$ 578,20</td><td>R$ 131,63</td><td>16</td><td>0,86%</td><td>15,1%</td></tr>
+        <tr><td>ADI04 · Técnica chegar mais longe</td><td>2</td><td>R$ 303,52</td><td>R$ 172,75</td><td>7</td><td>1,63%</td><td>9,3%</td></tr>
+        <tr><td>ADI10 · Não é virar influencer</td><td>0</td><td>R$ 189,92</td><td>—</td><td>3</td><td>2,08%</td><td>8,3%</td></tr>
+        <tr><td>ADI07 · Quem te ensinou a ser encontrada</td><td>0</td><td>R$ 101,79</td><td>—</td><td>1</td><td>2,37%</td><td>4,3%</td></tr>
+        <tr><td>ADI08 · Não depender de indicação</td><td>0</td><td>R$ 87,18</td><td>—</td><td>0</td><td>1,75%</td><td>0,0%</td></tr>
+        <tr><td>ADI02 · Aluna IFB próximo passo</td><td>0</td><td>R$ 53,83</td><td>—</td><td>3</td><td>1,08%</td><td>20,0%</td></tr>
+        <tr><td>ADI09 · Ser boa não basta</td><td>0</td><td>R$ 35,33</td><td>—</td><td>0</td><td>0,87%</td><td>0,0%</td></tr>
+        <tr><td>ADI06 · Agenda vazia</td><td>0</td><td>R$ 32,03</td><td>—</td><td>0</td><td>1,25%</td><td>0,0%</td></tr>
+        <tr><td>ADI03 · Conhecimento não resolve tudo</td><td>0</td><td>R$ 18,71</td><td>—</td><td>0</td><td>0,91%</td><td>0,0%</td></tr>
+        <tr><td>ADI01 · Encontrada, escolhida, valorizada</td><td>0</td><td>R$ 13,38</td><td>—</td><td>0</td><td>1,74%</td><td>0,0%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">🏆 <b>ADI05 "Paciente entende o valor"</b> é o cavalo até agora: 5 das 7 compras do pixel e o maior volume de checkouts (16). <b>ADI04</b> vem em seguida. Os demais ainda não converteram — base pequena (4 dias); vale dar mais tempo/verba aos de melhor CTR (ADI07, ADI10, ADI01) antes de cortar.</div>
+</div></section>
+
+<!-- 07 PAGAMENTO + CIDADES -->
+<section><div class="wrap">
+  <h2><span class="num">07.</span>Pagamento & origem geográfica</h2>
+  <p class="section-desc">Métodos de pagamento do ingresso e concentração por estado.</p>
+  <div class="grid g2" style="align-items:start">
+    <div>
+      <div class="grid g3" style="margin-bottom:14px">
+        <div class="stat"><div class="lbl">PIX</div><div class="val green">75%</div><div class="foot">111 vendas</div></div>
+        <div class="stat"><div class="lbl">Cartão</div><div class="val">24%</div><div class="foot">36 vendas</div></div>
+        <div class="stat"><div class="lbl">Apple Pay</div><div class="val">1%</div><div class="foot">1 venda</div></div>
+      </div>
+      <div class="note" style="margin-top:0">💧 PIX dominante mantém o caixa rápido e o risco de chargeback baixo.</div>
+    </div>
+    <div class="table-card scroll">
+      <table style="min-width:0">
+        <thead><tr><th>Estado</th><th>Ingressos</th></tr></thead>
+        <tbody>
+          <tr><td>São Paulo (SP)</td><td>55</td></tr>
+          <tr><td>Minas Gerais (MG)</td><td>9</td></tr>
+          <tr><td>Rio Grande do Sul (RS)</td><td>8</td></tr>
+          <tr><td>Rio de Janeiro (RJ)</td><td>7</td></tr>
+          <tr><td>Distrito Federal (DF)</td><td>7</td></tr>
+          <tr><td>Bahia (BA)</td><td>6</td></tr>
+          <tr><td>Ceará / Amazonas</td><td>5 / 5</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div></section>
+
+<!-- 08 CONCLUSAO -->
+<section style="border-bottom:none"><div class="wrap">
+  <h2><span class="num">08.</span>Leitura do lançamento</h2>
+  <p class="section-desc">Onde estamos em 11/07 e o que observar.</p>
+  <ul class="clean">
+    <li><b>Lançamento puxado pela lista/orgânico:</b> 141 dos 148 ingressos (95,3%) não vieram do pixel. O pico foi a abertura de carrinho em 07/07 (107 vendas).</li>
+    <li><b>Tráfego pago em rampa:</b> R$ 1.413,89 em 4 dias (08–11/07), 7 vendas via pixel, CPA pixel de R$ 229,92 c/ imposto. Fase de aprendizado — pixel frio, criativos em teste.</li>
+    <li><b>Página → venda de 2,50% (pago)</b> ainda baixa; ADI05 lidera a conversão. Recomenda-se concentrar verba nos criativos de melhor CTR e dar tempo ao pixel antes de novos cortes.</li>
+    <li><b>Order bumps saudáveis:</b> R$ 3.267,44 adicionais (Gravação Vitalícia e Mapa Clínico puxam), ~19% de anexação sobre o ingresso.</li>
+    <li><b>Exposição:</b> a receita do funil (R$ 7.392) supera o investimento (R$ 1.609 c/ imp.), mas <b>não é lucro do tráfego</b> — 95% é orgânico. O retorno real do lançamento vem do back-end (mentoria/gravações) vendido depois, não capturado aqui.</li>
+  </ul>
+  <div class="note">📌 <b>Próximo passo sugerido:</b> se o objetivo é escalar o pago, subir verba nos criativos ADI05/ADI04, testar públicos e acompanhar se o pixel amadurece (CPA cai) nos próximos 2–3 dias. Se o traqueamento por UTM for reativado na Hotmart, dá pra separar pago × orgânico com precisão (hoje só o pixel entrega isso).</div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="big">Relatório gerado em 11/07/2026 · IFB-ICV-2026</div>
+  Dados: Meta Ads (aba MTADS | IFB-ICV-2026) 08–11/07 + Hotmart 07–11/07 · © Brito Mídias × Instituto Fernanda Ben
+</div></footer>
+</body>
+</html>
