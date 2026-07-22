@@ -3,148 +3,250 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Relatório IFB-ICV-2026 · 22/07 | Brito Mídias × IFB</title>
+<title>Relatório IFB-ICV-2026 · 22/07 | Brito Mídias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0a0a0f; --bg-card:#13131a; --bg-soft:#1a1a24; --border:#2a2a36;
-    --text:#e8e8ee; --text-muted:#8a8a9a;
-    --purple:#7c3aed; --purple-light:#a78bfa; --purple-bg:rgba(124,58,237,.1);
-    --green:#10b981; --yellow:#f59e0b; --red:#ef4444; --blue:#3b82f6;
+    --roxo:#7C3AED; --roxo-dark:#5B21B6; --roxo-deep:#3B0F73; --roxo-light:#A78BFA; --roxo-xlight:#EDE9FE;
+    --ink:#141018; --cinza:#5B5566; --linha:#E7E3EE; --bg:#FFFFFF; --soft:#FAF9FC;
+    --verde:#059669; --vermelho:#DC2626; --amarelo:#D97706;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
-  a{color:var(--purple-light);text-decoration:none}
-  header{padding:56px 0 40px;border-bottom:1px solid var(--border);background:radial-gradient(1200px 400px at 50% -120px,rgba(124,58,237,.18),transparent)}
-  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--purple-light);font-weight:600}
-  .badge-date{display:inline-block;margin:14px 0 18px;padding:6px 14px;background:var(--purple-bg);border:1px solid rgba(124,58,237,.35);border-radius:999px;font-size:13px;color:var(--purple-light);font-weight:500}
-  h1{font-size:40px;font-weight:800;letter-spacing:-.02em;line-height:1.05}
-  .sub{margin-top:14px;color:var(--text-muted);font-size:15px;max-width:720px}
-  section{padding:44px 0;border-bottom:1px solid var(--border)}
-  h2{font-size:22px;font-weight:700;letter-spacing:-.01em;display:flex;align-items:baseline;gap:10px}
-  h2 .num{color:var(--purple);font-weight:800}
-  .section-desc{color:var(--text-muted);font-size:14px;margin:8px 0 26px}
-  .grid{display:grid;gap:14px}
-  .g3{grid-template-columns:repeat(3,1fr)}
-  .g2{grid-template-columns:repeat(2,1fr)}
-  .g4{grid-template-columns:repeat(4,1fr)}
-  .stat{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:20px}
-  .stat .lbl{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--text-muted);font-weight:600}
-  .stat .val{font-size:30px;font-weight:800;letter-spacing:-.02em;margin-top:8px}
-  .stat .foot{font-size:12.5px;color:var(--text-muted);margin-top:6px}
-  .stat.accent{border-color:rgba(124,58,237,.5);background:linear-gradient(180deg,rgba(124,58,237,.10),var(--bg-card))}
-  .val.green{color:var(--green)} .val.red{color:var(--red)} .val.purple{color:var(--purple-light)} .val.yellow{color:var(--yellow)}
-  .table-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+  body{background:var(--bg);color:var(--ink);font-family:Poppins,system-ui,sans-serif;font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+  a{color:var(--roxo-dark);text-decoration:none}
+  h1,h2{font-weight:800;letter-spacing:-.02em;line-height:1.08}
+  b,strong{font-weight:700}
+
+  /* HERO */
+  .hero{position:relative;overflow:hidden;color:#fff;padding:52px 0 60px;
+    background:radial-gradient(1100px 500px at 78% -10%,rgba(124,58,237,.55),transparent 60%),linear-gradient(150deg,#0A0A0A 0%,#17111F 45%,#3B0F73 100%)}
+  .grid-mask{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.14) 1px,transparent 1px);background-size:44px 44px;
+    -webkit-mask-image:radial-gradient(650px 400px at 70% 0%,#000,transparent 75%);mask-image:radial-gradient(650px 400px at 70% 0%,#000,transparent 75%)}
+  .hero .wrap{position:relative}
+  .brand{display:flex;align-items:center;gap:16px}
+  .brand svg{width:50px;height:50px}
+  .brand .word{display:flex;align-items:center;gap:13px;font-weight:300;color:#fff}
+  .brand .word b{font-weight:800;font-size:21px}
+  .brand .word .bar{width:2px;height:32px;background:rgba(255,255,255,.55)}
+  .brand .word span{font-size:21px;letter-spacing:.22em}
+  .hpill{display:inline-block;margin:30px 0 18px;padding:8px 16px;border:1px solid rgba(167,139,250,.5);border-radius:100px;font-size:12.5px;font-weight:500;color:#EDE9FE;background:rgba(124,58,237,.18)}
+  h1{font-size:46px}
+  .hsub{margin-top:16px;font-weight:300;color:#D8D2E8;font-size:15.5px;max-width:720px}
+
+  /* SECTIONS */
+  section{padding:56px 0}
+  section.bg{background:var(--bg)} section.soft{background:var(--soft)}
+  .section-label{display:flex;align-items:center;gap:12px;font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--roxo)}
+  .section-label::before{content:"";width:34px;height:2px;background:var(--roxo);border-radius:2px}
+  h2{font-size:30px;margin:14px 0 6px}
+  .intro{color:var(--cinza);font-size:15px;max-width:760px;margin-bottom:28px}
+
+  /* KPIs */
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .kpis.two{grid-template-columns:repeat(2,1fr)} .kpis.three{grid-template-columns:repeat(3,1fr)}
+  .kpi{border:1px solid var(--linha);border-radius:16px;padding:20px;background:var(--bg)}
+  .kpi small{display:block;color:var(--roxo);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+  .kpi b{display:block;font-size:29px;font-weight:700;letter-spacing:-.02em;margin:8px 0 4px}
+  .kpi span{color:var(--cinza);font-size:12.5px;font-weight:300}
+  .kpi b.roxo{color:var(--roxo)} .kpi b.verde{color:var(--verde)} .kpi b.amarelo{color:var(--amarelo)}
+  .kpi b.vermelho{color:var(--vermelho)}
+  section.soft .kpi{background:#fff}
+
+  /* callout */
+  .callout{background:#fff;border:1px solid var(--linha);border-left:3px solid var(--roxo);border-radius:12px;padding:16px 18px;font-size:14px;font-weight:300;color:#3f3a4a;margin-top:22px}
+  .callout b{color:var(--ink)}
+  .callout.warn{border-left-color:var(--amarelo);background:#FFFBF3}
+  .callout ul{list-style:none;margin-top:8px}
+  .callout li{padding:5px 0 5px 20px;position:relative}
+  .callout li::before{content:"▸";position:absolute;left:0;color:var(--roxo)}
+  section.soft .callout{background:#fff}
+
+  /* tags */
+  .tag{display:inline-block;padding:3px 11px;border-radius:100px;font-size:11px;font-weight:600;letter-spacing:.04em;border:1px solid var(--linha);color:var(--cinza)}
+  .tag-roxo{background:var(--roxo-xlight);color:var(--roxo-dark);border-color:transparent}
+  .tag-verde{background:#E7F6F0;color:#047857;border-color:transparent}
+  .tag-video{background:#EDE9FE;color:#5B21B6;border-color:transparent}
+  .tag-img{background:#F1F5F9;color:#475569;border-color:transparent}
+  .star{color:var(--amarelo)}
+
+  /* tables */
+  .tablecard{border:1px solid var(--linha);border-radius:16px;overflow:hidden;background:#fff}
   .scroll{overflow-x:auto}
   table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px}
-  thead th{background:var(--bg-soft);color:var(--text-muted);font-size:11px;letter-spacing:.06em;text-transform:uppercase;text-align:right;padding:12px 14px;font-weight:700;white-space:nowrap}
+  thead th{background:var(--soft);color:var(--roxo);font-size:11px;letter-spacing:.06em;text-transform:uppercase;text-align:right;padding:13px 15px;font-weight:600;white-space:nowrap}
   thead th:first-child{text-align:left}
-  tbody td{padding:11px 14px;text-align:right;border-top:1px solid var(--border);white-space:nowrap}
+  tbody td{padding:12px 15px;text-align:right;border-top:1px solid var(--linha);white-space:nowrap;font-weight:400}
   tbody td:first-child{text-align:left;font-weight:500}
-  tbody tr:hover{background:rgba(124,58,237,.05)}
-  tfoot td{padding:12px 14px;text-align:right;border-top:2px solid var(--border);font-weight:800;background:var(--bg-soft)}
+  tbody tr:hover{background:#FBFAFE}
+  tfoot td{padding:13px 15px;text-align:right;border-top:2px solid var(--linha);font-weight:700;background:var(--soft)}
   tfoot td:first-child{text-align:left}
-  .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:700}
-  .p-green{background:rgba(16,185,129,.14);color:#5eead4}
-  .p-org{background:rgba(59,130,246,.14);color:#93c5fd}
-  .p-purple{background:var(--purple-bg);color:var(--purple-light)}
-  .p-mut{background:var(--bg-soft);color:var(--text-muted)}
-  .star{color:var(--yellow)}
-  .compbar{display:flex;height:44px;border-radius:12px;overflow:hidden;border:1px solid var(--border);margin-bottom:14px}
-  .compbar>div{display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff}
-  .seg-org{background:linear-gradient(90deg,#2563eb,#3b82f6)}
-  .seg-pago{background:linear-gradient(90deg,#7c3aed,#a78bfa)}
-  .funnel{display:flex;flex-direction:column;gap:7px;margin:8px 0 4px}
-  .frow{display:grid;grid-template-columns:172px 1fr 118px;align-items:center;gap:16px}
-  .frow .fname{text-align:right;font-size:12.5px;color:var(--text-muted);font-weight:600;line-height:1.25}
+
+  /* composition */
+  .compbar{display:flex;height:46px;border-radius:100px;overflow:hidden;border:1px solid var(--linha);margin-bottom:16px}
+  .compbar>div{display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;color:#fff}
+  .seg-org{background:linear-gradient(90deg,#2563eb,#60a5fa)}
+  .seg-pago{background:linear-gradient(90deg,#7C3AED,#A78BFA)}
+
+  /* EXPOSIÇÃO */
+  .expo{display:grid;grid-template-columns:280px 1fr;gap:22px;align-items:stretch}
+  .expo-big{border-radius:18px;padding:26px;color:#fff;display:flex;flex-direction:column;justify-content:center;
+    background:linear-gradient(135deg,#5B21B6 0%,#A78BFA 100%)}
+  .expo.vermelho .expo-big{background:linear-gradient(135deg,#7C3AED 0%,#DC2626 130%)}
+  .expo.verde .expo-big{background:linear-gradient(135deg,#5B21B6 0%,#059669 130%)}
+  .expo-big small{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+  .expo-big b{font-size:40px;font-weight:800;letter-spacing:-.02em;margin:6px 0}
+  .expo-big span{font-size:12px;opacity:.85;font-weight:300}
+  .expo-calc{display:flex;align-items:center;gap:16px;flex-wrap:wrap;border:1px solid var(--linha);border-radius:18px;padding:24px;background:#fff}
+  .expo-calc>div:not(.op){flex:1;min-width:130px}
+  .expo-calc small{display:block;color:var(--roxo);font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+  .expo-calc b{font-size:22px;font-weight:700} .expo-calc b.verde{color:var(--verde)} .expo-calc b.vermelho{color:var(--vermelho)}
+  .expo-calc .op{font-size:24px;color:var(--cinza);font-weight:300}
+
+  /* FUNNEL */
+  .funnel{display:flex;flex-direction:column;gap:7px;margin:6px 0}
+  .frow{display:grid;grid-template-columns:180px 1fr 120px;align-items:center;gap:16px}
+  .frow .fname{text-align:right;font-size:12.5px;color:var(--cinza);font-weight:500;line-height:1.25}
   .frow .fbarwrap{display:block}
-  .frow .fbar{height:56px;border-radius:11px;display:flex;align-items:center;justify-content:center;color:#fff;min-width:76px;margin:0 auto;box-shadow:0 8px 22px -10px rgba(124,58,237,.7)}
-  .frow .fbar .fv{font-size:21px;font-weight:800;letter-spacing:-.01em}
-  .frow .fconv{font-size:15px;color:var(--purple-light);font-weight:800;line-height:1.1}
-  .frow .fconv small{display:block;color:var(--text-muted);font-weight:500;font-size:10px;text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
-  .frow .fconv.top{color:var(--text-muted);font-weight:700;font-size:12px}
-  .fb1{background:linear-gradient(90deg,#8b5cf6,#a78bfa)}
-  .fb2{background:linear-gradient(90deg,#7c46ec,#9575e8)}
-  .fb3{background:linear-gradient(90deg,#6d3ae0,#8a63e0)}
-  .fb4{background:linear-gradient(90deg,#5f30d4,#7d52d6)}
-  .fb5{background:linear-gradient(90deg,#5326c4,#7143c9)}
-  .pgcompra{margin-top:20px;display:flex;align-items:center;gap:20px;background:linear-gradient(180deg,rgba(245,158,11,.12),var(--bg-card));border:1px solid rgba(245,158,11,.45);border-radius:14px;padding:18px 24px}
-  .pgcompra .big{font-size:38px;font-weight:800;color:var(--yellow);line-height:1;white-space:nowrap}
-  .pgcompra .txt{font-size:14px;color:#cfcfda}
-  .pgcompra .txt b{color:var(--text)}
-  .note{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--purple);border-radius:10px;padding:16px 18px;font-size:14px;color:#cfcfda;margin-top:20px}
-  .note b{color:var(--text)}
-  .note.warn{border-left-color:var(--yellow)}
-  .note.warn b{color:var(--yellow)}
-  ul.clean{list-style:none;margin-top:8px}
-  ul.clean li{padding:6px 0 6px 22px;position:relative;font-size:14px;color:#cfcfda}
-  ul.clean li:before{content:"▸";position:absolute;left:0;color:var(--purple-light)}
-  .advblock{margin-top:22px;background:linear-gradient(180deg,rgba(16,185,129,.10),var(--bg-card));border:1px solid rgba(16,185,129,.45);border-radius:14px;padding:20px 22px}
-  .advblock h3{font-size:16px;color:#5eead4;margin-bottom:8px}
-  .advblock p{font-size:14px;color:#cfcfda}
-  .advblock p b{color:var(--text)}
-  .mini{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-  .mini .m{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:14px}
-  .mini .m .k{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--text-muted);font-weight:600}
-  .mini .m .v{font-size:18px;font-weight:800;margin-top:4px}
-  footer{padding:34px 0 60px;color:var(--text-muted);font-size:13px;text-align:center}
-  footer .big{color:var(--text);font-weight:700;margin-bottom:6px}
-  @media(max-width:720px){
-    h1{font-size:30px}
-    .g3,.g4{grid-template-columns:1fr 1fr}
-    .frow{grid-template-columns:92px 1fr 96px;gap:9px}
+  .frow .fbar{height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;min-width:78px;margin:0 auto;
+    background:linear-gradient(90deg,#7C3AED,#A78BFA);box-shadow:0 8px 20px -10px rgba(124,58,237,.55)}
+  .frow .fbar span{font-size:20px;font-weight:700}
+  .frow .fconv{font-size:15px;color:var(--roxo-dark);font-weight:700;line-height:1.1}
+  .frow .fconv small{display:block;color:var(--cinza);font-weight:400;font-size:10px;text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
+  .frow .fconv.top{color:var(--cinza);font-weight:600;font-size:12px}
+  .pgcompra{margin-top:20px;display:flex;align-items:center;gap:20px;background:linear-gradient(135deg,#EDE9FE,#fff);border:1px solid var(--roxo-light);border-radius:16px;padding:20px 24px}
+  .pgcompra .big{font-size:38px;font-weight:800;color:var(--roxo);line-height:1;white-space:nowrap}
+  .pgcompra .txt{font-size:14px;color:#3f3a4a;font-weight:300}
+  .pgcompra .txt b{color:var(--ink)}
+
+  /* GALLERY */
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .ccard{border:1px solid var(--linha);border-radius:16px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+  .cthumb{position:relative;display:block;aspect-ratio:1/1;background:#0f0b17;overflow:hidden}
+  .cthumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .cthumb .play{position:absolute;right:10px;bottom:10px;width:34px;height:34px;border-radius:50%;background:rgba(20,16,24,.62);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px}
+  .cthumb.noimg{background:linear-gradient(135deg,#EDE9FE,#F1F5F9)}
+  .cthumb.noimg img{display:none}
+  .cthumb.noimg::after{content:"sem preview";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#9488ab;font-size:12px}
+  .cthumb .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#9488ab;font-size:12px}
+  .cbody{padding:14px 15px}
+  .crow{display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .ccode{font-weight:700;font-size:13px;color:var(--ink)}
+  .cbadge{margin-left:6px;font-size:10px;font-weight:700;color:var(--amarelo)}
+  .ctitle{font-size:12.5px;color:var(--cinza);margin:4px 0 12px;min-height:34px;font-weight:300}
+  .cmetrics{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;border-top:1px solid var(--linha);padding-top:11px}
+  .cmetrics small{display:block;color:var(--cinza);font-size:9.5px;text-transform:uppercase;letter-spacing:.05em}
+  .cmetrics b{font-size:14px;font-weight:700}
+
+  .advblock{margin-top:26px;border:1px solid #BBEAD8;border-radius:16px;padding:22px;background:linear-gradient(180deg,#F0FBF6,#fff)}
+  .advblock p{font-size:14px;color:#3f3a4a;font-weight:300;margin-top:8px}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+  ul.reading{list-style:none}
+  ul.reading li{padding:8px 0 8px 24px;position:relative;font-size:14.5px;color:#3f3a4a;font-weight:300}
+  ul.reading li::before{content:"▸";position:absolute;left:0;color:var(--roxo);font-weight:700}
+  ul.reading b{color:var(--ink)}
+
+  footer{background:#141018;color:#B8B2C6;padding:40px 0 56px;font-size:13px;font-weight:300}
+  footer .brand.foot{margin-bottom:16px}
+  footer .brand .word b, footer .brand .word span{color:#EDE9FE}
+  footer .brand .word .bar{background:rgba(167,139,250,.6)}
+  footer p{max-width:760px}
+
+  @media(max-width:820px){
+    h1{font-size:34px} h2{font-size:25px}
+    .kpis,.kpis.three{grid-template-columns:1fr 1fr}
+    .expo{grid-template-columns:1fr}
+    .gallery{grid-template-columns:1fr 1fr}
+    .split{grid-template-columns:1fr}
+    .frow{grid-template-columns:96px 1fr 92px;gap:10px}
     .frow .fname{font-size:11px}
-    .frow .fbar .fv{font-size:17px}
-    .frow .fconv{font-size:13px}
-    .pgcompra{flex-direction:column;align-items:flex-start;gap:8px}
-    .mini{grid-template-columns:1fr 1fr}
+    .pgcompra{flex-direction:column;align-items:flex-start;gap:10px}
   }
+  @media(max-width:520px){ .kpis,.kpis.two,.kpis.three,.gallery{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
-<header>
+<header class="hero">
+  <div class="grid-mask"></div>
   <div class="wrap">
-    <div class="eyebrow">Brito Mídias × Instituto Fernanda Ben</div>
-    <div class="badge-date">📅 22/07/2026 · lançamento em andamento (carrinho aberto)</div>
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-label="BM Mídias">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+        <line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line>
+        <line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line>
+        <line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line>
+        <line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line>
+        <line x1="10" y1="27" x2="50" y2="33"></line>
+      </svg>
+      <span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span>
+    </div>
+    <div class="hpill">📅 22/07/2026 · lançamento em andamento (carrinho aberto)</div>
     <h1>Relatório IFB-ICV-2026</h1>
-    <p class="sub">Imersão Clínica de Valor — Ao Vivo com Fernanda Ben · Funil completo do lançamento pago · Meta Ads 08/07–22/07 + Hotmart 07/07–22/07</p>
+    <p class="hsub">Imersão Clínica de Valor — Ao Vivo com Fernanda Ben · Funil completo do lançamento pago<br>Meta Ads 08/07–22/07 + Hotmart 07/07–22/07</p>
   </div>
 </header>
 
-<section><div class="wrap">
-  <h2><span class="num">01.</span>Sumário do funil</h2>
-  <p class="section-desc">Resultado consolidado de 07/07 a 22/07 — ingresso + 4 order bumps.</p>
-  <div class="grid g3">
-    <div class="stat accent"><div class="lbl">Ingressos vendidos</div><div class="val purple">177</div><div class="foot">32 via tráfego pago · 145 orgânico/lista</div></div>
-    <div class="stat"><div class="lbl">Investimento Meta</div><div class="val ">R$ 7.712,37</div><div class="foot">c/ imposto R$ 8.778,99 · 15 dias (08/07–22/07)</div></div>
-    <div class="stat"><div class="lbl">Receita do funil (bruto)</div><div class="val green">R$ 10.091,98</div><div class="foot">214 itens · ingresso + order bumps</div></div>
-    <div class="stat"><div class="lbl">Receita order bumps</div><div class="val ">R$ 4.613,34</div><div class="foot">37 vendas · Mapa, Gravação, 2ª Cadeira, Curso</div></div>
-    <div class="stat"><div class="lbl">Ticket médio do ingresso</div><div class="val ">R$ 30,95</div><div class="foot">PIX 76% · cartão 23%</div></div>
-    <div class="stat"><div class="lbl">CPA pago (pixel)</div><div class="val yellow">R$ 258,21</div><div class="foot">c/ imposto ÷ 34 vendas do pixel</div></div>
+<section class="bg"><div class="wrap">
+  <div class="section-label">Visão consolidada</div>
+  <h2>Sumário do funil</h2>
+  <p class="intro">Resultado de 07/07 a 22/07 — ingresso + 4 order bumps.</p>
+  <div class="kpis">
+    <div class="kpi"><small>Ingressos vendidos</small><b class="roxo">177</b><span>32 tráfego pago · 145 orgânico/lista</span></div>
+    <div class="kpi"><small>Investimento Meta</small><b class="">R$ 7.712,37</b><span>c/ imposto R$ 8.778,99 · 15 dias</span></div>
+    <div class="kpi"><small>Receita do funil (bruto)</small><b class="verde">R$ 10.091,98</b><span>214 itens · ingresso + bumps</span></div>
+    <div class="kpi"><small>Receita order bumps</small><b class="">R$ 4.613,34</b><span>37 vendas anexadas</span></div>
+    <div class="kpi"><small>Ticket médio do ingresso</small><b class="">R$ 30,95</b><span>PIX 76% · cartão 23%</span></div>
+    <div class="kpi"><small>CPA pago (pixel)</small><b class="amarelo">R$ 258,21</b><span>c/ imposto ÷ 34 vendas</span></div>
   </div>
-  <div class="note warn">⚠️ <b>Leitura essencial:</b> este é um lançamento de <b>lista/orgânico</b>, não de tráfego. <b>107 das 177 vendas caíram em 07/07</b> — um dia antes de o pago começar. O tráfego rendeu <b>34 vendas pelo pixel</b>. Portanto 145 dos 177 ingressos (81,9%) são orgânicos; a receita do funil não deve ser lida como retorno do investimento pago.</div>
+  <div class="callout warn">⚠️ <b>Leitura essencial:</b> este é um lançamento de <b>lista/orgânico</b>, não de tráfego. <b>107 das 177 vendas caíram em 07/07</b> — antes de o pago começar. O tráfego rendeu <b>34 vendas pelo pixel</b>; 145 dos 177 ingressos (81,9%) são orgânicos. A receita do funil não deve ser lida como retorno do investimento pago.</div>
 </div></section>
 
-<section><div class="wrap">
-  <h2><span class="num">02.</span>Composição das vendas do ingresso</h2>
-  <p class="section-desc">Origem dos 177 ingressos — tráfego pago (pixel Meta) vs orgânico/lista.</p>
+<section class="soft"><div class="wrap">
+  <div class="section-label">Origem das vendas</div>
+  <h2>Composição do ingresso</h2>
+  <p class="intro">Origem dos 177 ingressos — tráfego pago (pixel Meta) vs orgânico/lista.</p>
   <div class="compbar">
-    <div class="seg-org" style="width:81.9%">Orgânico / lista · 145 · 81,9%</div>
-    <div class="seg-pago" style="width:18.1%" title="Pago 32">32</div>
+    <div class="seg-org" style="width:81.9%">Orgânico · 145 · 81,9%</div>
+    <div class="seg-pago" style="width:18.1%">32</div>
   </div>
-  <div class="grid g2">
-    <div class="stat"><div class="lbl">Orgânico / lista</div><div class="val" style="color:#93c5fd">145 <span style="font-size:15px;color:var(--text-muted)">· 81,9%</span></div><div class="foot">Abertura de carrinho para lista/e-mail — pico em 07/07 (107 vendas)</div></div>
-    <div class="stat"><div class="lbl">Tráfego pago (pixel)</div><div class="val purple">32 <span style="font-size:15px;color:var(--text-muted)">· 18,1%</span></div><div class="foot">Campanha iniciada em 08/07</div></div>
+  <div class="kpis two">
+    <div class="kpi"><small>Orgânico / lista</small><b style="color:#2563eb">145 · 81,9%</b><span>Abertura de carrinho para a lista — pico em 07/07 (107 vendas)</span></div>
+    <div class="kpi"><small>Tráfego pago (pixel)</small><b class="roxo">32 · 18,1%</b><span>Campanha iniciada em 08/07</span></div>
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <h2><span class="num">03.</span>Performance dia a dia</h2>
-  <p class="section-desc">Meta (investimento e pixel) vs Hotmart (ingressos aprovados) · período completo.</p>
-  <div class="table-card scroll">
-    <table>
-      <thead><tr><th>Data</th><th>Invest Meta</th><th>Compras pixel</th><th>CPA pixel</th><th>Ingressos Hotmart</th><th>Orgânico</th><th>Receita ingresso</th></tr></thead>
-      <tbody>
+<section class="bg"><div class="wrap">
+  <div class="section-label">Risco financeiro</div>
+  <h2>Exposição do lançamento</h2>
+  <p class="intro">Investimento c/ imposto menos a receita bruta do ingresso. Positiva = ainda no vermelho; vira negativa quando o ingresso paga o tráfego.</p>
+  <div class="expo vermelho">
+    <div class="expo-big">
+      <small>Exposição atual</small>
+      <b>R$ 3.300,35</b>
+      <span>investimento c/ imp − receita do ingresso</span>
+    </div>
+    <div class="expo-calc">
+      <div><small>Investimento c/ imposto</small><b>R$ 8.778,99</b></div>
+      <div class="op">−</div>
+      <div><small>Receita bruta do ingresso</small><b>R$ 5.478,64</b></div>
+      <div class="op">=</div>
+      <div><small>Exposição</small><b class="vermelho">R$ 3.300,35</b></div>
+    </div>
+  </div>
+  <div class="callout">📊 A exposição está <b>positiva</b> — o investimento (c/ imposto) ainda está acima da receita bruta do ingresso. Conforme o ingresso continua vendendo, ela cai e vira negativa (quando o ingresso paga o tráfego). Considera apenas o <b>ingresso</b> (não os order bumps nem o back-end de mentoria/gravações vendido depois — que é onde o lançamento realmente fecha o resultado).</div>
+</div></section>
+
+<section class="soft"><div class="wrap">
+  <div class="section-label">Dia a dia</div>
+  <h2>Performance diária</h2>
+  <p class="intro">Meta (investimento e pixel) vs Hotmart (ingressos aprovados) · período completo.</p>
+  <div class="tablecard"><div class="scroll"><table>
+    <thead><tr><th>Data</th><th>Invest Meta</th><th>Compras pixel</th><th>CPA pixel</th><th>Ingressos Hotmart</th><th>Orgânico</th><th>Receita ingresso</th></tr></thead>
+    <tbody>
 <tr><td>07/07</td><td>—</td><td>0</td><td>—</td><td>107</td><td>107</td><td>R$ 2.867,35</td></tr>
 <tr><td>08/07</td><td>R$ 264,45</td><td>2</td><td>R$ 132,22</td><td>34</td><td>32</td><td>R$ 948,34</td></tr>
 <tr><td>09/07</td><td>R$ 348,03</td><td>3</td><td>R$ 116,01</td><td>4</td><td>1</td><td>R$ 168,00</td></tr>
@@ -160,73 +262,229 @@
 <tr><td>19/07</td><td>R$ 421,65</td><td>3</td><td>R$ 140,55</td><td>3</td><td>0</td><td>R$ 141,00</td></tr>
 <tr><td>20/07</td><td>R$ 407,53</td><td>1</td><td>R$ 407,53</td><td>1</td><td>0</td><td>R$ 47,00</td></tr>
 <tr><td>21/07</td><td>R$ 409,66</td><td>4</td><td>R$ 102,41</td><td>2</td><td>0</td><td>R$ 94,00</td></tr>
-<tr><td>22/07 <span class="pill p-mut">em andamento</span></td><td>R$ 239,07</td><td>1</td><td>R$ 239,07</td><td>3</td><td>2</td><td>R$ 141,00</td></tr>
-      </tbody>
-      <tfoot><tr><td>TOTAL</td><td>R$ 7.712,37</td><td>34</td><td>R$ 226,83</td><td>177</td><td>145</td><td>R$ 5.478,64</td></tr></tfoot>
-    </table>
-  </div>
-  <div class="note">📈 <b>Leitura:</b> o volume real veio em 07/07 (abertura, 107 vendas orgânicas). Depois disso o tráfego assumiu o topo, com o <b>pixel sub-reportando</b> (34 no total) — típico de pixel frio no início da campanha.</div>
+<tr><td>22/07 <span class="tag">em andamento</span></td><td>R$ 239,07</td><td>1</td><td>R$ 239,07</td><td>3</td><td>2</td><td>R$ 141,00</td></tr>
+    </tbody>
+    <tfoot><tr><td>TOTAL</td><td>R$ 7.712,37</td><td>34</td><td>R$ 226,83</td><td>177</td><td>145</td><td>R$ 5.478,64</td></tr></tfoot>
+  </table></div></div>
+  <div class="callout">📈 O volume real veio em 07/07 (107 vendas orgânicas na abertura). Depois o tráfego assumiu o topo, com o pixel sub-reportando (34 no total) — típico de pixel frio no início.</div>
 </div></section>
 
-<section><div class="wrap">
-  <h2><span class="num">04.</span>Funil de tráfego pago (Meta Ads)</h2>
-  <p class="section-desc">15 dias agregados · 08/07–22/07 — do impacto à compra rastreada pelo pixel.</p>
+<section class="bg"><div class="wrap">
+  <div class="section-label">Funil pago</div>
+  <h2>Funil de tráfego (Meta Ads)</h2>
+  <p class="intro">15 dias agregados · 08/07–22/07 — do impacto à compra rastreada pelo pixel.</p>
   <div class="funnel">
-    <div class="frow"><div class="fname">Impressões</div><div class="fbarwrap"><div class="fbar fb1" style="width:100%"><span class="fv">95.084</span></div></div><div class="fconv top">topo do funil</div></div>
-    <div class="frow"><div class="fname">Cliques no link</div><div class="fbarwrap"><div class="fbar fb2" style="width:76%"><span class="fv">1.535</span></div></div><div class="fconv">1,61%<small>impressão → clique</small></div></div>
-    <div class="frow"><div class="fname">Visualizações<br>de página</div><div class="fbarwrap"><div class="fbar fb3" style="width:58%"><span class="fv">1.146</span></div></div><div class="fconv">74,7%<small>clique → página</small></div></div>
-    <div class="frow"><div class="fname">Initiate checkout</div><div class="fbarwrap"><div class="fbar fb4" style="width:42%"><span class="fv">93</span></div></div><div class="fconv">8,1%<small>página → checkout</small></div></div>
-    <div class="frow"><div class="fname">Compras (pixel)</div><div class="fbarwrap"><div class="fbar fb5" style="width:30%"><span class="fv">34</span></div></div><div class="fconv">36,6%<small>checkout → compra</small></div></div>
+    <div class="frow"><div class="fname">Impressões</div><div class="fbarwrap"><div class="fbar" style="width:100%"><span>95.084</span></div></div><div class="fconv top">topo do funil</div></div>
+    <div class="frow"><div class="fname">Cliques no link</div><div class="fbarwrap"><div class="fbar" style="width:76%"><span>1.535</span></div></div><div class="fconv">1,61%<small>impressão → clique</small></div></div>
+    <div class="frow"><div class="fname">Visualizações de página</div><div class="fbarwrap"><div class="fbar" style="width:58%"><span>1.146</span></div></div><div class="fconv">74,7%<small>clique → página</small></div></div>
+    <div class="frow"><div class="fname">Initiate checkout</div><div class="fbarwrap"><div class="fbar" style="width:42%"><span>93</span></div></div><div class="fconv">8,1%<small>página → checkout</small></div></div>
+    <div class="frow"><div class="fname">Compras (pixel)</div><div class="fbarwrap"><div class="fbar" style="width:30%"><span>34</span></div></div><div class="fconv">36,6%<small>checkout → compra</small></div></div>
   </div>
   <div class="pgcompra">
     <div class="big">2,97%</div>
-    <div class="txt"><b>Página → Compra.</b> De cada 100 pessoas que chegaram na página de vendas, ~3.0 compraram pelo tráfego pago — 34 compras ÷ 1.146 visualizações de página (pixel Meta).</div>
+    <div class="txt"><b>Página → Compra.</b> De cada 100 pessoas que chegaram na página, ~3.0 compraram pelo tráfego pago — 34 compras ÷ 1.146 visualizações (pixel Meta).</div>
   </div>
-  <div style="margin-top:26px;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--text-muted);font-weight:700">Custos do tráfego · c/ imposto</div>
-  <div class="mini" style="margin-top:10px">
-    <div class="m" style="border-color:rgba(245,158,11,.4)"><div class="k">CPM</div><div class="v" style="color:var(--yellow)">R$ 92,33</div><div class="foot" style="font-size:11px;color:var(--text-muted);margin-top:2px">por mil impressões</div></div>
-    <div class="m"><div class="k">CPC</div><div class="v">R$ 5,72</div><div class="foot" style="font-size:11px;color:var(--text-muted);margin-top:2px">por clique no link</div></div>
-    <div class="m"><div class="k">Custo / visita</div><div class="v">R$ 7,66</div><div class="foot" style="font-size:11px;color:var(--text-muted);margin-top:2px">por página vista</div></div>
-    <div class="m"><div class="k">Custo / checkout</div><div class="v">R$ 94,40</div><div class="foot" style="font-size:11px;color:var(--text-muted);margin-top:2px">por checkout iniciado</div></div>
+  <div class="section-label" style="margin-top:30px">Custos do tráfego · c/ imposto</div>
+  <div class="kpis" style="margin-top:14px">
+    <div class="kpi"><small>CPM</small><b class="amarelo">R$ 92,33</b><span>por mil impressões</span></div>
+    <div class="kpi"><small>CPC</small><b class="">R$ 5,72</b><span>por clique no link</span></div>
+    <div class="kpi"><small>Custo / visita</small><b class="">R$ 7,66</b><span>por página vista</span></div>
+    <div class="kpi"><small>Custo / checkout</small><b class="">R$ 94,40</b><span>por checkout iniciado</span></div>
   </div>
-  <div class="note warn" style="margin-top:22px">
-    <b style="font-size:15px">⚠️ Por que este funil ainda não está bom</b>
-    <ul class="clean" style="margin-top:10px">
-      <li><b>Amostra pequena:</b> 93 checkouts e 34 compras no pixel em 15 dias. Cada conversão mexe muito na porcentagem — as taxas ainda não são estatisticamente confiáveis.</li>
-      <li><b>O pixel sub-reporta (34 de 177 vendas reais):</b> as etapas de baixo (checkout→compra 36,6% e página→compra 2,97%) estão artificialmente baixas — o pixel perde PIX/boleto que aprovam depois e rastreio de iOS.</li>
-      <li><b>CTR de 1,61% + CPM de R$ 92,33:</b> topo caro (nicho de saúde) — clique a R$ 5,72 e checkout a R$ 94,40.</li>
-      <li><b>Gargalo no checkout:</b> só 8,1% de quem vê a página inicia o checkout. Parte é rastreio, parte é página/oferta.</li>
+  <div class="callout warn" style="margin-top:22px">
+    <b>⚠️ Por que este funil ainda não está bom</b>
+    <ul>
+      <li><b>Amostra pequena:</b> 93 checkouts e 34 compras no pixel em 15 dias — cada conversão move muito a %.</li>
+      <li><b>O pixel sub-reporta (34 de 177 vendas reais):</b> as etapas de baixo (checkout→compra 36,6% e página→compra 2,97%) ficam artificialmente baixas.</li>
+      <li><b>CTR de 1,61% + CPM de R$ 92,33:</b> topo caro (nicho de saúde) — clique a R$ 5,72, checkout a R$ 94,40.</li>
+      <li><b>Gargalo no checkout:</b> só 8,1% de quem vê a página inicia o checkout.</li>
     </ul>
-    <div style="margin-top:8px;color:#cfcfda">Ou seja: não é um funil "quebrado", é um funil <b style="color:var(--text)">novo, pequeno e mal-medido pelo pixel</b>. O resultado real do lançamento veio do orgânico/lista (177 vendas).</div>
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <h2><span class="num">05.</span>Receita por produto</h2>
-  <p class="section-desc">Ingresso (front-end) + 4 order bumps do funil · valor bruto Hotmart.</p>
-  <div class="table-card scroll">
-    <table>
-      <thead><tr><th>Produto</th><th>Papel</th><th>Vendas</th><th>Ticket</th><th>Receita</th><th>% receita</th></tr></thead>
-      <tbody>
-<tr><td>Imersão Clínica de Valor</td><td><span class="pill p-purple">Ingresso</span></td><td>177</td><td>R$ 30,95</td><td>R$ 5.478,64</td><td>54,3%</td></tr>
-<tr><td>Gravação Vitalícia da ICV</td><td><span class="pill p-green">Order bump</span></td><td>11</td><td>R$ 194,24</td><td>R$ 2.136,68</td><td>21,2%</td></tr>
-<tr><td>Mapa Clínico do Emagrecimento</td><td><span class="pill p-green">Order bump</span></td><td>12</td><td>R$ 145,54</td><td>R$ 1.746,50</td><td>17,3%</td></tr>
-<tr><td>Curso Os Pilares da Saúde</td><td><span class="pill p-green">Order bump</span></td><td>6</td><td>R$ 95,42</td><td>R$ 572,50</td><td>5,7%</td></tr>
-<tr><td>Segunda Cadeira (convidada)</td><td><span class="pill p-green">Order bump</span></td><td>8</td><td>R$ 19,71</td><td>R$ 157,66</td><td>1,6%</td></tr>
-      </tbody>
-      <tfoot><tr><td>TOTAL DO FUNIL</td><td></td><td>214</td><td></td><td>R$ 10.091,98</td><td>100%</td></tr></tfoot>
-    </table>
-  </div>
-  <div class="note">🧩 Os 4 order bumps somam <b>37 vendas / R$ 4.613,34</b> — quase todos anexados à compra do ingresso. Taxa de anexação sobre 177 ingressos ≈ <b>21%</b>.</div>
+<section class="soft"><div class="wrap">
+  <div class="section-label">Receita</div>
+  <h2>Receita por produto</h2>
+  <p class="intro">Ingresso (front-end) + 4 order bumps · valor bruto Hotmart.</p>
+  <div class="tablecard"><div class="scroll"><table>
+    <thead><tr><th>Produto</th><th>Papel</th><th>Vendas</th><th>Ticket</th><th>Receita</th><th>% receita</th></tr></thead>
+    <tbody>
+<tr><td>Imersão Clínica de Valor</td><td><span class="tag tag-roxo">Ingresso</span></td><td>177</td><td>R$ 30,95</td><td>R$ 5.478,64</td><td>54,3%</td></tr>
+<tr><td>Gravação Vitalícia da ICV</td><td><span class="tag tag-verde">Order bump</span></td><td>11</td><td>R$ 194,24</td><td>R$ 2.136,68</td><td>21,2%</td></tr>
+<tr><td>Mapa Clínico do Emagrecimento</td><td><span class="tag tag-verde">Order bump</span></td><td>12</td><td>R$ 145,54</td><td>R$ 1.746,50</td><td>17,3%</td></tr>
+<tr><td>Curso Os Pilares da Saúde</td><td><span class="tag tag-verde">Order bump</span></td><td>6</td><td>R$ 95,42</td><td>R$ 572,50</td><td>5,7%</td></tr>
+<tr><td>Segunda Cadeira (convidada)</td><td><span class="tag tag-verde">Order bump</span></td><td>8</td><td>R$ 19,71</td><td>R$ 157,66</td><td>1,6%</td></tr>
+    </tbody>
+    <tfoot><tr><td>TOTAL DO FUNIL</td><td></td><td>214</td><td></td><td>R$ 10.091,98</td><td>100%</td></tr></tfoot>
+  </table></div></div>
+  <div class="callout">🧩 Os 4 order bumps somam <b>37 vendas / R$ 4.613,34</b>. Taxa de anexação sobre 177 ingressos ≈ <b>21%</b>.</div>
 </div></section>
 
-<section><div class="wrap">
-  <h2><span class="num">06.</span>Ranking de criativos</h2>
-  <p class="section-desc">27 criativos (imagem/vídeo) · ranqueados por compra no pixel · top 14.</p>
-  <div class="table-card scroll">
-    <table>
-      <thead><tr><th>Criativo</th><th>Compras</th><th>Invest</th><th>CPA</th><th>IC</th><th>CTR</th><th>Pg→IC</th></tr></thead>
-      <tbody>
+<section class="bg"><div class="wrap">
+  <div class="section-label">Criativos</div>
+  <h2>Ranking &amp; galeria de criativos</h2>
+  <p class="intro">27 criativos (imagem/vídeo) · ranqueados por compra no pixel. Clique no preview para abrir no Drive.</p>
+  <div class="gallery">
+    <div class="ccard">
+      <a class="cthumb" href="https://drive.google.com/file/d/17l3bK3eizdLpJ3rf708mSjDTM3k3TTXY/view" target="_blank" rel="noopener"><img loading="lazy" src="https://drive.google.com/thumbnail?id=17l3bK3eizdLpJ3rf708mSjDTM3k3TTXY&sz=w600" alt="ADV06" onerror="this.closest('.cthumb').classList.add('noimg')"><span class="play">▶</span></a>
+      <div class="cbody">
+        <div class="crow"><span class="ccode">ADV06<span class="cbadge">★ líder</span></span><span class="tag tag-video">🎬 vídeo</span></div>
+        <div class="ctitle">Paciente nao escolhe sem encontrar</div>
+        <div class="cmetrics">
+          <div><small>Vendas</small><b>9</b></div>
+          <div><small>CPA</small><b>R$ 281,12</b></div>
+          <div><small>CTR</small><b>3,3%</b></div>
+          <div><small>Ret.25%</small><b>10,7%</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="ccard">
+      <a class="cthumb" href="https://drive.google.com/file/d/12nKkNrVJhIvV4x1TQNjgyKVvYyvJs8po/view" target="_blank" rel="noopener"><img loading="lazy" src="https://drive.google.com/thumbnail?id=12nKkNrVJhIvV4x1TQNjgyKVvYyvJs8po&sz=w600" alt="ADI05" onerror="this.closest('.cthumb').classList.add('noimg')"><span class="play">🔍</span></a>
+      <div class="cbody">
+        <div class="crow"><span class="ccode">ADI05</span><span class="tag tag-img">🖼️ imagem</span></div>
+        <div class="ctitle">Paciente entende o valor</div>
+        <div class="cmetrics">
+          <div><small>Vendas</small><b>8</b></div>
+          <div><small>CPA</small><b>R$ 188,37</b></div>
+          <div><small>CTR</small><b>0,8%</b></div>
+          <div><small>Ret.25%</small><b>—</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="ccard">
+      <a class="cthumb" href="https://drive.google.com/file/d/1VclbKi6X92QQtq56HCcUSg6jZSkLpnWX/view" target="_blank" rel="noopener"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1VclbKi6X92QQtq56HCcUSg6jZSkLpnWX&sz=w600" alt="ADV04" onerror="this.closest('.cthumb').classList.add('noimg')"><span class="play">▶</span></a>
+      <div class="cbody">
+        <div class="crow"><span class="ccode">ADV04</span><span class="tag tag-video">🎬 vídeo</span></div>
+        <div class="ctitle">Agenda depende so de indicacao</div>
+        <div class="cmetrics">
+          <div><small>Vendas</small><b>3</b></div>
+          <div><small>CPA</small><b>R$ 273,24</b></div>
+          <div><small>CTR</small><b>3,0%</b></div>
+          <div><small>Ret.25%</small><b>10,8%</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="ccard">
+      <a class="cthumb" href="https://drive.google.com/file/d/155_QwbxsgJO1NZO0qkB40XFzxVNFznoY/view" target="_blank" rel="noopener"><img loading="lazy" src="https://drive.google.com/thumbnail?id=155_QwbxsgJO1NZO0qkB40XFzxVNFznoY&sz=w600" alt="ADV03" onerror="this.closest('.cthumb').classList.add('noimg')"><span class="play">▶</span></a>
+      <div class="cbody">
+        <div class="crow"><span class="ccode">ADV03</span><span class="tag tag-video">🎬 vídeo</span></div>
+        <div class="ctitle">Agenda depende so de indicacao</div>
+        <div class="cmetrics">
+          <div><small>Vendas</small><b>3</b></div>
+          <div><small>CPA</small><b>R$ 172,16</b></div>
+          <div><small>CTR</small><b>2,8%</b></div>
+          <div><small>Ret.25%</small><b>12,0%</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="ccard">
+      <a class="cthumb" href="https://drive.google.com/file/d/1sBm9PRNAZfQuO5bUXHBsYTPYVHirXXRe/view" target="_blank" rel="noopener"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1sBm9PRNAZfQuO5bUXHBsYTPYVHirXXRe&sz=w600" alt="ADI04" onerror="this.closest('.cthumb').classList.add('noimg')"><span class="play">🔍</span></a>
+      <div class="cbody">
+        <div class="crow"><span class="ccode">ADI04</span><span class="tag tag-img">🖼️ imagem</span></div>
+        <div class="ctitle">Tecnica chegar mais longe</div>
+        <div class="cmetrics">
+          <div><small>Vendas</small><b>2</b></div>
+          <div><small>CPA</small><b>R$ 188,69</b></div>
+          <div><small>CTR</small><b>1,4%</b></div>
+          <div><small>Ret.25%</small><b>—</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="ccard">
+      <a class="cthumb" href="https://drive.google.com/file/d/1wuIz3U6CxPjtrkHTO22TrEYHRLE1T_vf/view" target="_blank" rel="noopener"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1wuIz3U6CxPjtrkHTO22TrEYHRLE1T_vf&sz=w600" alt="ADI19" onerror="this.closest('.cthumb').classList.add('noimg')"><span class="play">🔍</span></a>
+      <div class="cbody">
+        <div class="crow"><span class="ccode">ADI19</span><span class="tag tag-img">🖼️ imagem</span></div>
+        <div class="ctitle">Ser boa nao basta</div>
+        <div class="cmetrics">
+          <div><small>Vendas</small><b>2</b></div>
+          <div><small>CPA</small><b>R$ 86,31</b></div>
+          <div><small>CTR</small><b>1,6%</b></div>
+          <div><small>Ret.25%</small><b>—</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="ccard">
+      <a class="cthumb" href="https://drive.google.com/file/d/14VfGa_0vGpZHaFnLgFWsNE1H4DWsgDAF/view" target="_blank" rel="noopener"><img loading="lazy" src="https://drive.google.com/thumbnail?id=14VfGa_0vGpZHaFnLgFWsNE1H4DWsgDAF&sz=w600" alt="ADV07" onerror="this.closest('.cthumb').classList.add('noimg')"><span class="play">▶</span></a>
+      <div class="cbody">
+        <div class="crow"><span class="ccode">ADV07</span><span class="tag tag-video">🎬 vídeo</span></div>
+        <div class="ctitle">O melhor nao e o que mais fatura</div>
+        <div class="cmetrics">
+          <div><small>Vendas</small><b>2</b></div>
+          <div><small>CPA</small><b>R$ 254,05</b></div>
+          <div><small>CTR</small><b>2,4%</b></div>
+          <div><small>Ret.25%</small><b>13,0%</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="ccard">
+      <a class="cthumb" href="https://drive.google.com/file/d/1gGE4nPdUiM0Y38SiLJAaEiczXw0IspLe/view" target="_blank" rel="noopener"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1gGE4nPdUiM0Y38SiLJAaEiczXw0IspLe&sz=w600" alt="ADV05" onerror="this.closest('.cthumb').classList.add('noimg')"><span class="play">▶</span></a>
+      <div class="cbody">
+        <div class="crow"><span class="ccode">ADV05</span><span class="tag tag-video">🎬 vídeo</span></div>
+        <div class="ctitle">O problema nao e o instagram</div>
+        <div class="cmetrics">
+          <div><small>Vendas</small><b>1</b></div>
+          <div><small>CPA</small><b>R$ 200,60</b></div>
+          <div><small>CTR</small><b>1,9%</b></div>
+          <div><small>Ret.25%</small><b>9,6%</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="ccard">
+      <a class="cthumb" href="https://drive.google.com/file/d/1ehmHoCW9tMq_st0htcSFw7IvYkCYLCnA/view" target="_blank" rel="noopener"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1ehmHoCW9tMq_st0htcSFw7IvYkCYLCnA&sz=w600" alt="ADI20" onerror="this.closest('.cthumb').classList.add('noimg')"><span class="play">🔍</span></a>
+      <div class="cbody">
+        <div class="crow"><span class="ccode">ADI20</span><span class="tag tag-img">🖼️ imagem</span></div>
+        <div class="ctitle">Nao e virar influencer</div>
+        <div class="cmetrics">
+          <div><small>Vendas</small><b>1</b></div>
+          <div><small>CPA</small><b>R$ 366,48</b></div>
+          <div><small>CTR</small><b>1,3%</b></div>
+          <div><small>Ret.25%</small><b>—</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="ccard">
+      <a class="cthumb" href="https://drive.google.com/file/d/1mwfLl4vYXQaeO91bpA7qvOHcg9SAdMNC/view" target="_blank" rel="noopener"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1mwfLl4vYXQaeO91bpA7qvOHcg9SAdMNC&sz=w600" alt="ADI11" onerror="this.closest('.cthumb').classList.add('noimg')"><span class="play">🔍</span></a>
+      <div class="cbody">
+        <div class="crow"><span class="ccode">ADI11</span><span class="tag tag-img">🖼️ imagem</span></div>
+        <div class="ctitle">Encontrada escolhida valorizada</div>
+        <div class="cmetrics">
+          <div><small>Vendas</small><b>1</b></div>
+          <div><small>CPA</small><b>R$ 157,19</b></div>
+          <div><small>CTR</small><b>1,7%</b></div>
+          <div><small>Ret.25%</small><b>—</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="ccard">
+      <a class="cthumb" href="https://drive.google.com/file/d/1jrmK4j8aps2_DB4ckvkM5Mg42NUPexir/view" target="_blank" rel="noopener"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1jrmK4j8aps2_DB4ckvkM5Mg42NUPexir&sz=w600" alt="ADI18" onerror="this.closest('.cthumb').classList.add('noimg')"><span class="play">🔍</span></a>
+      <div class="cbody">
+        <div class="crow"><span class="ccode">ADI18</span><span class="tag tag-img">🖼️ imagem</span></div>
+        <div class="ctitle">Nao depender de indicacao</div>
+        <div class="cmetrics">
+          <div><small>Vendas</small><b>1</b></div>
+          <div><small>CPA</small><b>R$ 358,56</b></div>
+          <div><small>CTR</small><b>1,7%</b></div>
+          <div><small>Ret.25%</small><b>—</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="ccard">
+      <a class="cthumb" href="https://drive.google.com/file/d/1SxrMPUL8f9EVt0im_hgsDXWzamuAfWkq/view" target="_blank" rel="noopener"><img loading="lazy" src="https://drive.google.com/thumbnail?id=1SxrMPUL8f9EVt0im_hgsDXWzamuAfWkq&sz=w600" alt="ADV02" onerror="this.closest('.cthumb').classList.add('noimg')"><span class="play">▶</span></a>
+      <div class="cbody">
+        <div class="crow"><span class="ccode">ADV02</span><span class="tag tag-video">🎬 vídeo</span></div>
+        <div class="ctitle">Sentem isso em silencio</div>
+        <div class="cmetrics">
+          <div><small>Vendas</small><b>1</b></div>
+          <div><small>CPA</small><b>R$ 92,40</b></div>
+          <div><small>CTR</small><b>2,3%</b></div>
+          <div><small>Ret.25%</small><b>10,8%</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tablecard" style="margin-top:26px"><div class="scroll"><table>
+    <thead><tr><th>Criativo</th><th>Compras</th><th>Invest</th><th>CPA</th><th>IC</th><th>CTR</th><th>Pg→IC</th></tr></thead>
+    <tbody>
 <tr><td>ADV06 · Paciente nao escolhe sem encontrar <span class="star">★</span></td><td>9</td><td>R$ 2.222,69</td><td>R$ 281,12</td><td>21</td><td>3,3%</td><td>6,9%</td></tr>
 <tr><td>ADI05 · Paciente entende o valor</td><td>8</td><td>R$ 1.323,90</td><td>R$ 188,37</td><td>22</td><td>0,8%</td><td>10,6%</td></tr>
 <tr><td>ADV04 · Agenda depende so de indicacao</td><td>3</td><td>R$ 720,12</td><td>R$ 273,24</td><td>10</td><td>3,0%</td><td>8,9%</td></tr>
@@ -241,16 +499,14 @@
 <tr><td>ADV02 · Sentem isso em silencio</td><td>1</td><td>R$ 81,17</td><td>R$ 92,40</td><td>1</td><td>2,3%</td><td>11,1%</td></tr>
 <tr><td>ADI10 · Nao e virar influencer</td><td>0</td><td>R$ 282,22</td><td>—</td><td>4</td><td>1,7%</td><td>9,8%</td></tr>
 <tr><td>ADI02 · Aluna ifb proximo passo</td><td>0</td><td>R$ 72,14</td><td>—</td><td>3</td><td>1,1%</td><td>13,0%</td></tr>
-      </tbody>
-    </table>
-  </div>
+    </tbody>
+  </table></div></div>
   <div class="advblock">
-    <h3>🎬 Destaque — criativos novos de VÍDEO (ADV)</h3>
-    <p>Entraram em <b>15/07</b> assumindo praticamente toda a verba (as imagens ADI foram pausadas). Já somam <b>19 compras</b> com R$ 4.270,67 investidos — CPA R$ 255,86 · destaque para ADV06 e ADV03 e ADV04. Hooks de 10–15% (retenção de vídeo acima do padrão da conta). É o motor da <b>recuperação do tráfego pago</b> no lançamento.</p>
-    <div class="table-card scroll" style="margin-top:14px">
-      <table>
-        <thead><tr><th>Vídeo</th><th>Compras</th><th>Invest</th><th>CPA</th><th>IC</th><th>CTR</th><th>Hook 25%</th></tr></thead>
-        <tbody>
+    <div class="section-label" style="color:#059669">🎬 Criativos de vídeo (ADV)</div>
+    <p>Entraram em <b>15/07</b> assumindo quase toda a verba (imagens ADI pausadas). Já somam <b>19 compras</b> · R$ 4.270,67 investidos · CPA R$ 255,86. O CTR dos vídeos (2,91%) supera bem o das imagens — é o motor da recuperação do pago.</p>
+    <div class="tablecard"><div class="scroll"><table>
+      <thead><tr><th>Vídeo</th><th>Compras</th><th>Invest</th><th>CPA</th><th>IC</th><th>CTR</th><th>Ret.25%</th></tr></thead>
+      <tbody>
 <tr><td>ADV06 · Paciente nao escolhe sem encontrar</td><td>9</td><td>R$ 2.222,69</td><td>R$ 281,12</td><td>21</td><td>3,26%</td><td>10,7%</td></tr>
 <tr><td>ADV04 · Agenda depende so de indicacao</td><td>3</td><td>R$ 720,12</td><td>R$ 273,24</td><td>10</td><td>3,02%</td><td>10,8%</td></tr>
 <tr><td>ADV03 · Agenda depende so de indicacao</td><td>3</td><td>R$ 453,74</td><td>R$ 172,16</td><td>7</td><td>2,77%</td><td>12,0%</td></tr>
@@ -258,49 +514,59 @@
 <tr><td>ADV05 · O problema nao e o instagram</td><td>1</td><td>R$ 176,23</td><td>R$ 200,60</td><td>3</td><td>1,95%</td><td>9,6%</td></tr>
 <tr><td>ADV02 · Sentem isso em silencio</td><td>1</td><td>R$ 81,17</td><td>R$ 92,40</td><td>1</td><td>2,27%</td><td>10,8%</td></tr>
 <tr><td>ADV01 · Agenda nao reflete seu estudo</td><td>0</td><td>R$ 170,35</td><td>—</td><td>0</td><td>2,32%</td><td>9,3%</td></tr>
-        </tbody>
-      </table>
-    </div>
+      </tbody>
+    </table></div></div>
   </div>
-  <div class="note">🏆 <b>ADV06 "Paciente nao escolhe sem encontrar"</b> lidera: 9 das 34 compras do pixel e 21 checkouts.</div>
+  <div class="callout">🏆 <b>ADV06 "Paciente nao escolhe sem encontrar"</b> lidera por volume (9 vendas). Nota da gestão: o vídeo de maior volume vem puxando verba com CPA alto e retenção baixa — vale melhorar o gancho (hook) e priorizar os de melhor eficiência.</div>
 </div></section>
 
-<section><div class="wrap">
-  <h2><span class="num">07.</span>Pagamento & origem geográfica</h2>
-  <p class="section-desc">Métodos de pagamento do ingresso e concentração por estado.</p>
-  <div class="grid g2" style="align-items:start">
+<section class="soft"><div class="wrap">
+  <div class="section-label">Público</div>
+  <h2>Pagamento &amp; origem geográfica</h2>
+  <p class="intro">Métodos de pagamento do ingresso e concentração por estado.</p>
+  <div class="split">
     <div>
-      <div class="grid g3" style="margin-bottom:14px">
-        <div class="stat"><div class="lbl">PIX</div><div class="val green">76%</div><div class="foot">135 vendas</div></div><div class="stat"><div class="lbl">Cartão</div><div class="val ">23%</div><div class="foot">41 vendas</div></div><div class="stat"><div class="lbl">Apple Pay</div><div class="val ">1%</div><div class="foot">1 venda</div></div>
-      </div>
-      <div class="note" style="margin-top:0">💧 PIX dominante mantém o caixa rápido e o risco de chargeback baixo.</div>
+      <div class="kpis three"><div class="kpi"><small>PIX</small><b class="roxo">76%</b><span>135 vendas</span></div><div class="kpi"><small>Cartão</small><b class="">23%</b><span>41 vendas</span></div><div class="kpi"><small>Apple Pay</small><b class="">1%</b><span>1 venda</span></div></div>
+      <div class="callout" style="margin-top:14px">💧 PIX dominante mantém o caixa rápido e o risco de chargeback baixo.</div>
     </div>
-    <div class="table-card scroll">
-      <table style="min-width:0">
-        <thead><tr><th>Estado</th><th>Ingressos</th></tr></thead>
-        <tbody><tr><td>São Paulo (SP)</td><td>62</td></tr><tr><td>Minas Gerais (MG)</td><td>13</td></tr><tr><td>Rio de Janeiro (RJ)</td><td>11</td></tr><tr><td>Distrito Federal (DF)</td><td>9</td></tr><tr><td>Bahia (BA)</td><td>9</td></tr><tr><td>Rio Grande do Sul (RS)</td><td>8</td></tr><tr><td>Mato Grosso (MT)</td><td>6</td></tr></tbody>
-      </table>
-    </div>
+    <div class="tablecard"><div class="scroll"><table style="min-width:0">
+      <thead><tr><th>Estado</th><th>Ingressos</th></tr></thead>
+      <tbody><tr><td>São Paulo (SP)</td><td>62</td></tr><tr><td>Minas Gerais (MG)</td><td>13</td></tr><tr><td>Rio de Janeiro (RJ)</td><td>11</td></tr><tr><td>Distrito Federal (DF)</td><td>9</td></tr><tr><td>Bahia (BA)</td><td>9</td></tr><tr><td>Rio Grande do Sul (RS)</td><td>8</td></tr><tr><td>Mato Grosso (MT)</td><td>6</td></tr></tbody>
+    </table></div></div>
   </div>
 </div></section>
 
-<section style="border-bottom:none"><div class="wrap">
-  <h2><span class="num">08.</span>Leitura do lançamento</h2>
-  <p class="section-desc">Onde estamos em 22/07 e o que observar.</p>
-  <ul class="clean">
-    <li><b>Lançamento puxado pela lista/orgânico:</b> 145 dos 177 ingressos (81,9%) não vieram do pixel. O pico foi a abertura de carrinho em 07/07 (107 vendas).</li>
-    <li><b>Tráfego pago:</b> R$ 7.712,37 em 15 dias, 34 vendas via pixel, CPA de R$ 258,21 c/ imposto.</li>
-    <li><b>Vídeos novos (ADV) recuperando o pago:</b> entraram em 15/07, já somam 19 compras (R$ 4.270,67 investidos) com hooks de 10–15%.</li>
-    <li><b>Página → compra de 2,97% (pago)</b>; ADV06 lidera a conversão.</li>
-    <li><b>Order bumps:</b> R$ 4.613,34 adicionais, ~21% de anexação sobre o ingresso.</li>
-    <li><b>Exposição:</b> a receita do funil (R$ 10.091,98) supera o investimento (R$ 8.778,99 c/ imp.), mas <b>não é lucro do tráfego</b> — 82% é orgânico. O retorno real vem do back-end vendido depois, não capturado aqui.</li>
+<section class="bg"><div class="wrap">
+  <div class="section-label">Conclusão</div>
+  <h2>Leitura do lançamento</h2>
+  <p class="intro">Onde estamos em 22/07 e o próximo passo.</p>
+  <ul class="reading">
+    <li><b>Puxado pela lista/orgânico:</b> 145 dos 177 ingressos (81,9%) não vieram do pixel; pico na abertura de 07/07 (107 vendas).</li>
+    <li><b>Tráfego pago:</b> R$ 7.712,37 em 15 dias, 34 vendas via pixel, CPA R$ 258,21 c/ imposto.</li>
+    <li><b>Vídeos (ADV) recuperando o pago:</b> desde 15/07, 19 compras (R$ 4.270,67 investidos). CTR bem acima das imagens.</li>
+    <li><b>Exposição positiva de R$ 3.300,35</b> (invest c/ imp − receita do ingresso) — ainda a recuperar; cai conforme o ingresso vende.</li>
+    <li><b>Order bumps:</b> R$ 4.613,34 adicionais, ~21% de anexação.</li>
   </ul>
-  <div class="note">📌 <b>Próximo passo:</b> escalar os vídeos de melhor CPA, testar públicos e acompanhar se o pixel amadurece. Se o traqueamento por UTM for reativado na Hotmart, dá pra separar pago × orgânico com precisão.</div>
+  <div class="callout">📌 <b>Próximo passo:</b> escalar os vídeos de melhor eficiência e melhorar o hook do criativo de maior volume; testar públicos e acompanhar o amadurecimento do pixel. Reativar o traqueamento por UTM na Hotmart separaria pago × orgânico com precisão.</div>
 </div></section>
 
-<footer><div class="wrap">
-  <div class="big">Relatório gerado em 22/07/2026 · IFB-ICV-2026</div>
-  Dados: Meta Ads (aba MTADS | IFB-ICV-2026) 08/07–22/07 + Hotmart 07/07–22/07 · © Brito Mídias × Instituto Fernanda Ben
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="brand foot">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#A78BFA" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-label="BM Mídias">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+        <line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line>
+        <line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line>
+        <line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line>
+        <line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line>
+        <line x1="10" y1="27" x2="50" y2="33"></line>
+      </svg>
+      <span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span>
+    </div>
+    <p>Relatório gerado em 22/07/2026 · IFB-ICV-2026 · Central de Estratégia e Resultados<br>
+    Dados: Meta Ads (MTADS | IFB-ICV-2026) 08/07–22/07 + Hotmart 07/07–22/07 · © Brito Mídias × Instituto Fernanda Ben</p>
+  </div>
+</footer>
 </body>
 </html>
