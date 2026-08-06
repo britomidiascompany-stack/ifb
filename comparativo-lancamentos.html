@@ -288,32 +288,50 @@
 <!-- 04B CONVERSÃO POR PÁGINA -->
 <section class="bg"><div class="wrap">
   <div class="section-label">Por página</div>
-  <h2>Conversão de cada página do lançamento atual</h2>
-  <p class="intro">Todas as páginas em teste no IFB-ICV, com o funil completo do tráfego pago. Ordenado por investimento.</p>
+  <h2>Conversão completa de todas as páginas</h2>
+  <p class="intro"><b>Conversão de página</b> = de cada 100 pessoas que chegaram na página, quantas compraram o produto principal do front (ingresso). Todas as páginas veiculadas no IFB-ICV até 06/08, ordenadas por investimento.</p>
 
-  <div class="tablecard scroll"><table>
-    <thead><tr><th>Página</th><th>Invest.</th><th>Impress.</th><th>CTR</th><th>Vis. página</th><th>Custo/vis.</th><th>Checkouts</th><th>Pág→Chk</th><th>Custo/chk</th><th>Vendas</th><th>Pág→Venda</th><th>CPA</th></tr></thead>
+  <div class="tablecard scroll"><table style="min-width:1080px">
+    <thead><tr>
+      <th>Página</th><th>Invest.</th><th>CTR</th><th>Vis. página</th><th>Custo/vis.</th><th>Checkouts</th><th>Custo/chk</th><th>Conv. checkout</th><th>Conv. página</th><th>Vendas</th><th>CPA</th><th>ROAS</th>
+    </tr></thead>
     <tbody>
-      <tr><td><b>V1</b> (principal)</td><td>R$ 11.837</td><td>123.460</td><td>1,58%</td><td>1.486</td><td>R$ 9,07</td><td>133</td><td class="best">9,0%</td><td>R$ 101,31</td><td><b>43</b></td><td class="best">2,89%</td><td class="best">R$ 313,34</td></tr>
-      <tr><td><b>V2</b></td><td>R$ 4.074</td><td>38.775</td><td>2,19%</td><td>651</td><td class="best">R$ 7,12</td><td>48</td><td>7,4%</td><td class="best">R$ 96,61</td><td><b>17</b></td><td>2,61%</td><td>R$ 272,79</td></tr>
-      <tr><td><b>Crescimento Clínico</b> <span class="tag tag-warn">nova</span></td><td>R$ 1.388</td><td>7.840</td><td>1,76%</td><td>86</td><td class="atual">R$ 18,37</td><td>5</td><td>5,8%</td><td class="atual">R$ 315,92</td><td>2</td><td>2,33%</td><td>R$ 789,81</td></tr>
-      <tr><td><b>V3</b></td><td>R$ 637</td><td>4.563</td><td class="best">2,70%</td><td>90</td><td>R$ 8,05</td><td>2</td><td class="atual">2,2%</td><td>R$ 362,45</td><td>0</td><td>0,00%</td><td>—</td></tr>
-      <tr><td><b>Próxima Etapa V</b> <span class="tag tag-warn">nova</span></td><td>R$ 323</td><td>2.663</td><td>2,10%</td><td>46</td><td>R$ 8,00</td><td>1</td><td class="atual">2,2%</td><td>R$ 367,78</td><td>0</td><td>0,00%</td><td>—</td></tr>
-      <tr><td><b>Valor do Cuidado V</b> <span class="tag tag-warn">nova</span></td><td>R$ 270</td><td>1.376</td><td>2,69%</td><td>29</td><td>R$ 10,62</td><td>0</td><td class="atual">0,0%</td><td>—</td><td>0</td><td>0,00%</td><td>—</td></tr>
-      <tr><td><b>Ser Encontrada V</b> <span class="tag tag-warn">nova</span></td><td>R$ 252</td><td>1.777</td><td>1,69%</td><td>19</td><td class="atual">R$ 15,10</td><td>0</td><td class="atual">0,0%</td><td>—</td><td>0</td><td>0,00%</td><td>—</td></tr>
+      <tr class="win"><td><b>V1</b> — geral (ser-encontrada)</td><td>R$ 11.837</td><td>1,58%</td><td>1.486</td><td>R$ 9,07</td><td>133</td><td>R$ 101,31</td><td>32,3%</td><td class="best">2,89%</td><td><b>43</b></td><td>R$ 313,34</td><td>0,11x</td></tr>
+      <tr class="win"><td><b>V2</b> — variação</td><td>R$ 4.074</td><td>2,19%</td><td>651</td><td class="best">R$ 7,12</td><td>48</td><td class="best">R$ 96,61</td><td>35,4%</td><td>2,61%</td><td><b>17</b></td><td class="best">R$ 272,79</td><td class="best">0,12x</td></tr>
+      <tr><td><b>Crescimento Clínico</b> <span class="tag tag-warn">nova</span></td><td>R$ 1.388</td><td>1,76%</td><td>86</td><td class="atual">R$ 18,37</td><td>5</td><td class="atual">R$ 315,92</td><td class="best">40,0%</td><td>2,33%</td><td>2</td><td class="atual">R$ 789,81</td><td>0,04x</td></tr>
+      <tr><td><b>V3</b> — variação</td><td>R$ 637</td><td class="best">2,70%</td><td>90</td><td>R$ 8,05</td><td>2</td><td>R$ 362,45</td><td class="atual">0,0%</td><td class="atual">0,00%</td><td>0</td><td>—</td><td>0,00x</td></tr>
+      <tr><td><b>Próxima Etapa V</b> <span class="tag tag-warn">nova</span></td><td>R$ 323</td><td>2,10%</td><td>46</td><td>R$ 8,00</td><td>1</td><td>R$ 367,78</td><td class="atual">0,0%</td><td class="atual">0,00%</td><td>0</td><td>—</td><td>0,00x</td></tr>
+      <tr><td><b>Valor do Cuidado V</b> <span class="tag tag-warn">nova</span></td><td>R$ 270</td><td>2,69%</td><td>29</td><td>R$ 10,62</td><td>0</td><td>—</td><td>—</td><td class="atual">0,00%</td><td>0</td><td>—</td><td>0,00x</td></tr>
+      <tr><td><b>Ser Encontrada V</b> <span class="tag tag-warn">nova</span></td><td>R$ 252</td><td>1,69%</td><td>19</td><td class="atual">R$ 15,10</td><td>0</td><td>—</td><td>—</td><td class="atual">0,00%</td><td>0</td><td>—</td><td>0,00x</td></tr>
     </tbody>
-    <tfoot><tr><td>TOTAL</td><td>R$ 18.781</td><td>180.454</td><td>1,76%</td><td>2.407</td><td>R$ 8,88</td><td>189</td><td>7,9%</td><td>R$ 113,11</td><td>62</td><td>2,58%</td><td>R$ 344,81</td></tr></tfoot>
+    <tfoot><tr><td>TOTAL</td><td>R$ 18.781</td><td>1,76%</td><td>2.407</td><td>R$ 8,88</td><td>189</td><td>R$ 113,11</td><td>32,8%</td><td>2,58%</td><td>62</td><td>R$ 344,81</td><td>0,10x</td></tr></tfoot>
   </table></div>
 
-  <div class="callout">
-    <b>📌 Leitura das páginas:</b>
+  <div class="callout warn">
+    <b>📐 Como cada número foi calculado:</b>
     <ul>
-      <li><b>V1 concentra 63% da verba e 69% das vendas</b> — é a página que sustenta o lançamento, com a melhor conversão (9,0% pág→checkout) e o melhor CPA entre as que têm volume.</li>
-      <li><b>V2 tem o menor custo por visita (R$ 7,12) e por checkout (R$ 96,61)</b>, mas converte um pouco menos que a V1. É a segunda mais eficiente e merece mais verba.</li>
-      <li><b>V3 tem o melhor CTR (2,70%) mas a pior conversão de página (2,2%)</b> — o criativo atrai, a página não segura. Candidata a revisão ou pausa.</li>
-      <li><b>As 4 páginas novas (VSL) somam R$ 2.233 e apenas 2 vendas.</b> Ainda com poucos dias e volume baixíssimo (19 a 86 visitas cada) — é cedo para julgar, mas nenhuma mostrou sinal superior à V1 até aqui.</li>
-      <li>⚠️ Mesmo a melhor página (V1, 9,0%) está <b>abaixo da média histórica de 16,1%</b> e do benchmark de 20%. O problema é estrutural do funil atual, não de uma variante específica.</li>
+      <li><b>Conv. página</b> = vendas ÷ visualizações de página (quem chegou e comprou o front)</li>
+      <li><b>Conv. checkout</b> = vendas ÷ checkouts iniciados</li>
+      <li><b>Custos e CPA</b> = sobre investimento com imposto de 13,83%</li>
+      <li><b>ROAS</b> = (vendas × ticket médio do front de R$ 33,17) ÷ investimento c/ imposto. Considerando o funil completo com order bumps (R$ 57,05 por ingresso), o ROAS geral sobe para <b>0,17x</b>.</li>
     </ul>
+  </div>
+
+  <div class="callout bad">
+    <b>🔴 Nenhuma página se paga no front.</b> O melhor ROAS é 0,12x (V2) — ou seja, cada R$ 1,00 investido devolve R$ 0,12 em venda de ingresso. Isso é estrutural do modelo: ingresso de R$ 33 com CPA de R$ 273 a R$ 313. O lançamento só fecha no back-end (mentoria, gravações, cursos) vendido depois do evento.
+  </div>
+
+  <h3>Leitura página a página</h3>
+  <ul class="reading">
+    <li><b>V1 é a espinha dorsal</b> — 63% da verba, 69% das vendas e a melhor conversão de página (2,89%). É a única com volume suficiente para leitura confiável.</li>
+    <li><b>V2 é a mais eficiente</b> — menor custo por visita (R$ 7,12), menor custo por checkout (R$ 96,61), melhor CPA (R$ 272,79) e melhor ROAS (0,12x). Converte um pouco menos que a V1 no total, mas <b>fecha melhor no checkout (35,4% vs 32,3%)</b>. Candidata natural a receber mais verba.</li>
+    <li><b>V3 é o alerta vermelho</b> — melhor CTR de todas (2,70%), mas <b>zero vendas em 90 visitas</b>. O criativo atrai, a página não entrega. Pausar ou revisar.</li>
+    <li><b>Crescimento Clínico tem o melhor fechamento de checkout (40%)</b>, mas o custo por visita é o dobro da média (R$ 18,37). Se o custo de tráfego cair, é a página com melhor sinal de qualidade.</li>
+    <li><b>As 3 páginas VSL somam R$ 845 e zero vendas</b> — mas com apenas 19 a 46 visitas cada. Volume insuficiente para qualquer conclusão; precisam de mais verba ou devem ser pausadas para não diluir o orçamento.</li>
+  </ul>
+
+  <div class="callout">
+    ⚠️ <b>Contexto:</b> mesmo a melhor página (V1, com 9,0% de conversão página→checkout) está <b>bem abaixo da média histórica de 16,1%</b> dos lançamentos anteriores e do benchmark interno de 20%. O problema não está em uma variante específica — é o funil inteiro que está convertendo menos.
   </div>
 </div></section>
 
