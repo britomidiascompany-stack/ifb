@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criativos Novos · IFB-ICV-2026 | Brito Midias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--roxo:#7C3AED;--roxo-dark:#5B21B6;--roxo-light:#A78BFA;--roxo-xlight:#EDE9FE;
+    --ink:#141018;--cinza:#5B5566;--linha:#E7E3EE;--bg:#FFFFFF;--soft:#FAF9FC;
+    --verde:#059669;--vermelho:#DC2626;--amarelo:#D97706;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:Poppins,system-ui,sans-serif;font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+  a{color:var(--roxo-dark);text-decoration:none}
+  h1,h2{font-weight:800;letter-spacing:-.02em;line-height:1.08}
+  b,strong{font-weight:700}
+  .hero{position:relative;overflow:hidden;color:#fff;padding:52px 0 60px;
+    background:radial-gradient(1100px 500px at 78% -10%,rgba(124,58,237,.55),transparent 60%),linear-gradient(150deg,#0A0A0A 0%,#17111F 45%,#3B0F73 100%)}
+  .grid-mask{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.14) 1px,transparent 1px);background-size:44px 44px;
+    -webkit-mask-image:radial-gradient(650px 400px at 70% 0%,#000,transparent 75%);mask-image:radial-gradient(650px 400px at 70% 0%,#000,transparent 75%)}
+  .hero .wrap{position:relative}
+  .brand{display:flex;align-items:center;gap:16px}
+  .brand svg{width:50px;height:50px}
+  .brand .word{display:flex;align-items:center;gap:13px;font-weight:300;color:#fff}
+  .brand .word b{font-weight:800;font-size:21px}
+  .brand .word .bar{width:2px;height:32px;background:rgba(255,255,255,.55)}
+  .brand .word span{font-size:21px;letter-spacing:.22em}
+  .hpill{display:inline-block;margin:30px 0 18px;padding:8px 16px;border:1px solid rgba(167,139,250,.5);border-radius:100px;font-size:12.5px;font-weight:500;color:#EDE9FE;background:rgba(124,58,237,.18)}
+  h1{font-size:44px}
+  .hsub{margin-top:16px;font-weight:300;color:#D8D2E8;font-size:15.5px;max-width:780px}
+  section{padding:56px 0}
+  section.bg{background:var(--bg)} section.soft{background:var(--soft)}
+  .section-label{display:flex;align-items:center;gap:12px;font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--roxo)}
+  .section-label::before{content:"";width:34px;height:2px;background:var(--roxo);border-radius:2px}
+  h2{font-size:30px;margin:14px 0 6px}
+  h3{font-size:19px;font-weight:700;margin:28px 0 10px}
+  .intro{color:var(--cinza);font-size:15px;max-width:840px;margin-bottom:28px}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .kpi{border:1px solid var(--linha);border-radius:16px;padding:20px;background:var(--bg)}
+  .kpi small{display:block;color:var(--roxo);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+  .kpi b{display:block;font-size:26px;font-weight:700;letter-spacing:-.02em;margin:8px 0 4px}
+  .kpi span{color:var(--cinza);font-size:12.5px;font-weight:300}
+  .kpi b.verde{color:var(--verde)}.kpi b.vermelho{color:var(--vermelho)}.kpi b.amarelo{color:var(--amarelo)}.kpi b.roxo{color:var(--roxo)}
+  section.soft .kpi{background:#fff}
+  .callout{background:#fff;border:1px solid var(--linha);border-left:3px solid var(--roxo);border-radius:12px;padding:16px 18px;font-size:14px;font-weight:300;color:#3f3a4a;margin-top:22px}
+  .callout b{color:var(--ink)}
+  .callout.warn{border-left-color:var(--amarelo);background:#FFFBF3}
+  .callout.bad{border-left-color:var(--vermelho);background:#FEF4F4}
+  .callout.good{border-left-color:var(--verde);background:#F1FBF7}
+  .callout ul{list-style:none;margin-top:8px}
+  .callout li{padding:5px 0 5px 20px;position:relative}
+  .callout li::before{content:"\25B8";position:absolute;left:0;color:var(--roxo)}
+  section.soft .callout{background:#fff}
+  .tablecard{border:1px solid var(--linha);border-radius:16px;overflow:hidden;background:#fff}
+  .scroll{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:13px;min-width:900px}
+  thead th{background:var(--soft);color:var(--roxo);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;text-align:right;padding:12px 11px;font-weight:600;white-space:nowrap}
+  thead th:first-child,thead th:nth-child(2){text-align:left}
+  tbody td{padding:11px;text-align:right;border-top:1px solid var(--linha);white-space:nowrap;font-weight:400}
+  tbody td:first-child,tbody td:nth-child(2){text-align:left}
+  tbody td:first-child{font-weight:700}
+  tbody tr:hover{background:#FBFAFE}
+  tbody tr.win{background:#F1FBF7}
+  tbody tr.win:hover{background:#E6F7EF}
+  tfoot td{padding:12px 11px;text-align:right;border-top:2px solid var(--linha);font-weight:700;background:var(--soft)}
+  tfoot td:first-child,tfoot td:nth-child(2){text-align:left}
+  .tag{display:inline-block;padding:2px 9px;border-radius:100px;font-size:10.5px;font-weight:600;border:1px solid var(--linha);color:var(--cinza)}
+  .tag-car{background:#EDE9FE;color:#5B21B6;border-color:transparent}
+  .tag-vid{background:#E0F2FE;color:#0369A1;border-color:transparent}
+  .verde{color:var(--verde);font-weight:700}
+  .vermelho{color:var(--vermelho);font-weight:700}
+  ul.reading{list-style:none}
+  ul.reading li{padding:8px 0 8px 24px;position:relative;font-size:14.5px;color:#3f3a4a;font-weight:300}
+  ul.reading li::before{content:"\25B8";position:absolute;left:0;color:var(--roxo);font-weight:700}
+  ul.reading b{color:var(--ink)}
+  ol.acoes{list-style:none;counter-reset:a}
+  ol.acoes li{counter-increment:a;padding:14px 0 14px 46px;position:relative;font-size:14.5px;color:#3f3a4a;font-weight:300;border-bottom:1px solid var(--linha)}
+  ol.acoes li:last-child{border-bottom:none}
+  ol.acoes li::before{content:counter(a);position:absolute;left:0;top:12px;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#7C3AED,#5B21B6);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+  ol.acoes li b{color:var(--ink)}
+  footer{background:#141018;color:#B8B2C6;padding:40px 0 56px;font-size:13px;font-weight:300}
+  footer .brand.foot{margin-bottom:16px}
+  footer .brand .word b,footer .brand .word span{color:#EDE9FE}
+  footer .brand .word .bar{background:rgba(167,139,250,.6)}
+  @media(max-width:860px){h1{font-size:32px}h2{font-size:25px}.kpis{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="grid-mask"></div>
+  <div class="wrap">
+    <div class="brand"><svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-label="BM Midias">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+        <line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line>
+        <line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line>
+        <line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line>
+        <line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line>
+        <line x1="10" y1="27" x2="50" y2="33"></line></svg><span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span></div>
+    <div class="hpill">🧪 Teste de criativos novos · atualizado em 06/08/2026</div>
+    <h1>Performance dos Criativos Novos</h1>
+    <p class="hsub">IFB-ICV-2026 · 9 carrosséis (ADC01-09) + 2 vídeos com legenda (ADV13/ADV14)<br>
+    Estreia: 28/07 (vídeos) e 05/08 (carrosséis) · dados do pixel Meta Ads</p>
+  </div>
+</header>
+
+<section class="bg"><div class="wrap">
+  <div class="section-label">Visão geral</div>
+  <h2>Resultado consolidado dos novos</h2>
+  <p class="intro">Todos os valores de custo já incluem o imposto de 13,83% sobre a mídia.</p>
+  <div class="kpis">
+    <div class="kpi"><small>Investimento</small><b>R$ 2.109,84</b><span>c/ imposto R$ 2.401,63</span></div>
+    <div class="kpi"><small>CPM</small><b class="amarelo">R$ 208,96</b><span>11.493 impressões</span></div>
+    <div class="kpi"><small>CTR</small><b>1,82%</b><span>209 cliques no link</span></div>
+    <div class="kpi"><small>CPC</small><b>R$ 11,49</b><span>custo por clique</span></div>
+    <div class="kpi"><small>Custo / visita página</small><b>R$ 17,03</b><span>141 visualizações</span></div>
+    <div class="kpi"><small>Custo / checkout</small><b class="vermelho">R$ 300,20</b><span>8 checkouts iniciados</span></div>
+    <div class="kpi"><small>Vendas</small><b class="roxo">3</b><span>compras via pixel</span></div>
+    <div class="kpi"><small>Custo por venda (CPA)</small><b class="vermelho">R$ 800,54</b><span>média dos novos criativos</span></div>
+  </div>
+  <div class="callout warn">
+    ⚠️ <b>Amostra ainda pequena:</b> os carrosséis têm apenas <b>2 dias</b> de veiculação (05–06/08) e o conjunto todo somou <b>3 vendas</b>. Com esse volume, cada conversão muda muito as médias — os números servem para indicar tendência, não para decisão definitiva.
+  </div>
+</div></section>
+
+<section class="soft"><div class="wrap">
+  <div class="section-label">Detalhe</div>
+  <h2>Métricas por criativo</h2>
+  <p class="intro">Ordenado por vendas e depois por investimento. Linhas em verde converteram.</p>
+  <div class="tablecard scroll"><table>
+    <thead><tr>
+      <th>Criativo</th><th>Tipo</th><th>Estreia</th><th>Invest.</th><th>CPM</th><th>Impress.</th><th>Cliques</th><th>CTR</th><th>CPC</th><th>Vis. pág.</th><th>Custo/vis.</th><th>Checkouts</th><th>Custo/chk</th><th>Vendas</th><th>CPA</th>
+    </tr></thead>
+    <tbody>
+        <tr class="win"><td>ADC07 ⭐</td><td><span class="tag tag-car">Carrossel</span></td><td>05/08</td><td>R$ 340,25</td><td>R$ 211,99</td><td>1.827</td><td>26</td><td>1,42%</td><td>R$ 14,90</td><td>19</td><td>R$ 20,38</td><td>2</td><td>R$ 193,65</td><td><b>2</b></td><td><b class=verde>R$ 193,65</b></td></tr>
+        <tr class="win"><td>ADV14</td><td><span class="tag tag-vid">Vídeo c/ legenda</span></td><td>28/07</td><td>R$ 650,34</td><td>R$ 227,36</td><td>3.256</td><td>64</td><td>1,97%</td><td>R$ 11,57</td><td>52</td><td>R$ 14,24</td><td>3</td><td>R$ 246,76</td><td><b>1</b></td><td><b class=verde>R$ 740,28</b></td></tr>
+        <tr><td>ADC01</td><td><span class="tag tag-car">Carrossel</span></td><td>05/08</td><td>R$ 396,78</td><td>R$ 215,38</td><td>2.097</td><td>51</td><td>2,43%</td><td>R$ 8,86</td><td>34</td><td>R$ 13,28</td><td>1</td><td>R$ 451,65</td><td><b>0</b></td><td>—</td></tr>
+        <tr><td>ADC08</td><td><span class="tag tag-car">Carrossel</span></td><td>05/08</td><td>R$ 235,78</td><td>R$ 200,89</td><td>1.336</td><td>17</td><td>1,27%</td><td>R$ 15,79</td><td>9</td><td>R$ 29,82</td><td>1</td><td>R$ 268,39</td><td><b>0</b></td><td>—</td></tr>
+        <tr><td>ADC03</td><td><span class="tag tag-car">Carrossel</span></td><td>05/08</td><td>R$ 178,83</td><td>R$ 211,82</td><td>961</td><td>17</td><td>1,77%</td><td>R$ 11,97</td><td>10</td><td>R$ 20,36</td><td>0</td><td>—</td><td><b>0</b></td><td>—</td></tr>
+        <tr><td>ADV13</td><td><span class="tag tag-vid">Vídeo c/ legenda</span></td><td>28/07</td><td>R$ 71,80</td><td>R$ 205,87</td><td>397</td><td>7</td><td>1,76%</td><td>R$ 11,68</td><td>3</td><td>R$ 27,24</td><td>0</td><td>—</td><td><b>0</b></td><td>—</td></tr>
+        <tr><td>ADC09</td><td><span class="tag tag-car">Carrossel</span></td><td>05/08</td><td>R$ 65,68</td><td>R$ 185,52</td><td>403</td><td>6</td><td>1,49%</td><td>R$ 12,46</td><td>6</td><td>R$ 12,46</td><td>0</td><td>—</td><td><b>0</b></td><td>—</td></tr>
+        <tr><td>ADC06</td><td><span class="tag tag-car">Carrossel</span></td><td>05/08</td><td>R$ 56,50</td><td>R$ 229,69</td><td>280</td><td>2</td><td>0,71%</td><td>R$ 32,16</td><td>1</td><td>R$ 64,31</td><td>0</td><td>—</td><td><b>0</b></td><td>—</td></tr>
+        <tr><td>ADC04</td><td><span class="tag tag-car">Carrossel</span></td><td>05/08</td><td>R$ 56,01</td><td>R$ 137,11</td><td>465</td><td>11</td><td>2,37%</td><td>R$ 5,80</td><td>3</td><td>R$ 21,25</td><td>1</td><td>R$ 63,76</td><td><b>0</b></td><td>—</td></tr>
+        <tr><td>ADC02</td><td><span class="tag tag-car">Carrossel</span></td><td>05/08</td><td>R$ 31,29</td><td>R$ 138,05</td><td>258</td><td>6</td><td>2,33%</td><td>R$ 5,94</td><td>3</td><td>R$ 11,87</td><td>0</td><td>—</td><td><b>0</b></td><td>—</td></tr>
+        <tr><td>ADC05</td><td><span class="tag tag-car">Carrossel</span></td><td>05/08</td><td>R$ 26,58</td><td>R$ 142,05</td><td>213</td><td>2</td><td>0,94%</td><td>R$ 15,13</td><td>1</td><td>R$ 30,26</td><td>0</td><td>—</td><td><b>0</b></td><td>—</td></tr>
+    </tbody>
+    <tfoot><tr><td>TOTAL</td><td>11 criativos</td><td>—</td><td>R$ 2.109,84</td><td>R$ 208,96</td><td>11.493</td><td>209</td><td>1,82%</td><td>R$ 11,49</td><td>141</td><td>R$ 17,03</td><td>8</td><td>R$ 300,20</td><td>3</td><td>R$ 800,54</td></tr></tfoot>
+  </table></div>
+  <div class="callout good">
+    ⭐ <b>Destaque: ADC07</b> — único criativo novo com resultado consistente. 2 vendas com <b>CPA de R$ 193,65</b>, quase metade da média do lançamento (R$ 348) e o melhor CPA entre todos os criativos ativos no período. Foi o carrossel que sustentou a campanha [27].
+  </div>
+</div></section>
+
+<section class="bg"><div class="wrap">
+  <div class="section-label">Comparação justa</div>
+  <h2>Novos vs. criativos já rodando</h2>
+  <p class="intro">Comparativo na mesma janela de tempo (28/07 a 06/08), para neutralizar a variação de CPM do leilão — que subiu de R$ 111 em julho para R$ 150 em agosto.</p>
+  <div class="tablecard scroll"><table style="min-width:620px">
+    <thead><tr><th>Métrica</th><th>Criativos novos</th><th>Criativos antigos</th><th>Diferença</th></tr></thead>
+    <tbody>
+      <tr><td>Investimento</td><td>R$ 2.109,84</td><td>R$ 4.738,30</td><td>—</td></tr>
+      <tr><td>CPM</td><td class="vermelho">R$ 208,96</td><td>R$ 138,40</td><td class="vermelho">+51,0% mais caro</td></tr>
+      <tr><td>CTR</td><td class="vermelho">1,82%</td><td>2,18%</td><td class="vermelho">−16,5%</td></tr>
+      <tr><td>CPC</td><td class="vermelho">R$ 11,49</td><td>R$ 6,35</td><td class="vermelho">+80,9% mais caro</td></tr>
+      <tr><td>Custo / visita página</td><td class="vermelho">R$ 17,03</td><td>R$ 7,97</td><td class="vermelho">+113,8% mais caro</td></tr>
+      <tr><td>Conv. página → checkout</td><td class="vermelho">5,7%</td><td>8,3%</td><td class="vermelho">−31,4%</td></tr>
+      <tr><td>Custo / checkout</td><td class="vermelho">R$ 300,20</td><td>R$ 96,31</td><td class="vermelho">+211,7% mais caro</td></tr>
+      <tr><td>Conv. checkout → compra</td><td class="verde">37,5%</td><td>32,6%</td><td class="verde">+15,0% melhor</td></tr>
+      <tr><td>Vendas</td><td>3</td><td>16</td><td>—</td></tr>
+      <tr><td><b>CPA</b></td><td class="vermelho">R$ 800,54</td><td>R$ 337,10</td><td class="vermelho">+137,5% mais caro</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout bad">
+    🔴 <b>No agregado, os criativos novos ainda estão mais caros em todas as etapas do topo do funil.</b> O CPM 51% acima e o CTR 16% abaixo indicam que, no geral, eles estão competindo pior no leilão e chamando menos atenção que os criativos já maduros.<br><br>
+    <b>Mas há um contraponto importante:</b> quem chega no checkout por eles <b>compra mais</b> (37,5% vs 32,6%) — sinal de que a mensagem atrai gente mais qualificada, mesmo trazendo menos gente.
+  </div>
+</div></section>
+
+<section class="soft"><div class="wrap">
+  <div class="section-label">Leitura</div>
+  <h2>O que esses números dizem</h2>
+  <ul class="reading">
+    <li><b>Carrosséis estrearam no pior momento de leilão do lançamento.</b> Nos dias 05 e 06/08 o CPM da conta foi de R$ 189 e R$ 232 — os dois dias mais caros de todo o período. Parte da desvantagem é timing, não qualidade do criativo.</li>
+    <li><b>ADC07 provou o formato.</b> Com R$ 340,00 investidos entregou 2 vendas a CPA de R$ 193,65. O formato carrossel funciona — o problema é que os outros 8 ADCs ainda não encontraram tração.</li>
+    <li><b>ADV14 (vídeo com legenda) teve o maior investimento e só 1 venda.</b> CPA de R$ 740,28. A legenda não resolveu sozinha — CTR de 1,97% ficou próximo da média, sem ganho relevante.</li>
+    <li><b>A conversão página→checkout dos novos (5,7%) está abaixo até da média já baixa do lançamento (7,8%).</b> Reforça o diagnóstico do comparativo entre lançamentos: o gargalo principal continua sendo a página, não o criativo.</li>
+  </ul>
+  <div class="callout">
+    📊 <b>Contexto de escala:</b> os novos criativos consumiram apenas R$ 2.109,84 — cerca de 11% do investimento total do lançamento (R$ 18,7 mil). É um teste, não uma aposta principal.
+  </div>
+</div></section>
+
+<section class="bg"><div class="wrap">
+  <div class="section-label">Recomendação</div>
+  <h2>Próximos passos</h2>
+  <ol class="acoes">
+    <li><b>Manter ADC07 rodando e dar mais verba.</b> É o único criativo novo com CPA abaixo da média do lançamento. Vale isolar em conjunto próprio para garantir entrega e confirmar se sustenta o CPA em escala.</li>
+    <li><b>Dar mais 2–3 dias aos demais carrosséis antes de cortar.</b> ADC01, ADC03 e ADC04 têm CTR entre 1,8% e 2,4% (na média da conta) mas ainda quase sem entrega. Cortar agora seria decidir com 2 dias de dados em leilão caro.</li>
+    <li><b>Pausar ADC06 e ADC05.</b> CTR de 0,71% e 0,94% — bem abaixo do mínimo de 1,95%. São os únicos com sinal claramente ruim de topo de funil.</li>
+    <li><b>Reavaliar ADV13/ADV14.</b> Juntos consumiram R$ 722,00 para 1 venda. A hipótese da legenda não se confirmou até aqui — vale comparar com os originais sem legenda (ADV03/ADV05) antes de investir mais.</li>
+    <li><b>Prioridade segue sendo a página.</b> Mesmo o melhor criativo novo esbarra numa conversão página→checkout de 5,7%. Criativo bom em página que não converte só aumenta o custo do aprendizado.</li>
+  </ol>
+</div></section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand foot"><svg viewBox="0 0 100 100" fill="none" stroke="#A78BFA" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-label="BM Midias">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+        <line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line>
+        <line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line>
+        <line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line>
+        <line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line>
+        <line x1="10" y1="27" x2="50" y2="33"></line></svg><span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span></div>
+    <p>Análise gerada em 06/08/2026 · Central de Estratégia e Resultados<br>
+    Fonte: Meta Ads (aba MTADS | IFB-ICV-2026) · período 28/07 a 06/08/2026 · custos c/ imposto de 13,83%<br>
+    <a href="index.html" style="color:#A78BFA">← Relatório IFB-ICV-2026</a> · <a href="comparativo-lancamentos.html" style="color:#A78BFA">Comparativo de lançamentos</a> · © Brito Mídias × Instituto Fernanda Ben</p>
+  </div>
+</footer>
+</body>
+</html>

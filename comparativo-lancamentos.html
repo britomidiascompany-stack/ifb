@@ -237,7 +237,7 @@
       <tr class="destaque"><td><b>Conv. Página → Venda</b></td><td class="best">6,58%</td><td>4,00%</td><td>6,19%</td><td class="atual">2,54%</td><td>—</td></tr>
       <tr><td>Vendas (pixel)</td><td>892</td><td>752</td><td>492</td><td>61</td><td>—</td></tr>
       <tr class="destaque"><td><b>CPA</b></td><td class="best">R$ 91,98</td><td>R$ 157,28</td><td>R$ 116,09</td><td class="atual">R$ 348,44</td><td>Alvo R$ 99</td></tr>
-      <tr><td>Ticket do ingresso</td><td>R$ 36,70</td><td>R$ 53,37</td><td>R$ 39,07</td><td class="atual">R$ 112,02</td><td>—</td></tr>
+      <tr><td>Ticket médio do ingresso</td><td>R$ 36,70</td><td>R$ 53,37</td><td>R$ 39,07</td><td class="best">R$ 33,17</td><td>—</td></tr>
       <tr><td>% da receita vinda de bumps</td><td>50,5%</td><td>47,8%</td><td class="best">53,3%</td><td class="atual">41,9%</td><td>—</td></tr>
       <tr><td>ROAS front-end</td><td class="best">0,92x</td><td>0,72x</td><td>0,83x</td><td>0,55x</td><td>—</td></tr>
       <tr><td>Exposição</td><td>−R$ 6.495</td><td>−R$ 33.310</td><td>−R$ 9.721</td><td>−R$ 9.503</td><td>—</td></tr>
@@ -255,40 +255,65 @@
   </div>
 </div></section>
 
-<!-- 04 A HIPÓTESE DO PREÇO -->
+<!-- 04 PREÇO DESCARTADO + PÁGINAS -->
 <section class="soft"><div class="wrap">
-  <div class="section-label">Causa provável</div>
-  <h2>O ticket triplicou — e a conversão caiu pela metade</h2>
-  <p class="intro">A explicação mais consistente com os dados não é design de página nem velocidade: é <b>preço e valor percebido</b>.</p>
+  <div class="section-label">Causa investigada</div>
+  <h2>Não é o preço — o ticket é o mais barato dos quatro</h2>
+  <p class="intro">A primeira hipótese era que o ticket mais alto estaria travando o checkout. Os dados desmentem: o IFB-ICV tem o <b>menor ticket médio</b> dos 4 lançamentos (lotes de R$ 27 e R$ 47) e ainda assim a pior conversão.</p>
 
   <div class="kpis">
-    <div class="kpi"><small>Ticket OPS001</small><b>R$ 36,70</b><span>Conv. página→checkout: 18,9%</span></div>
-    <div class="kpi"><small>Ticket LPICT001</small><b>R$ 39,07</b><span>Conv. página→checkout: 16,4%</span></div>
-    <div class="kpi"><small>Ticket MEIF004</small><b>R$ 53,37</b><span>Conv. página→checkout: 12,9%</span></div>
-    <div class="kpi"><small>Ticket IFB-ICV</small><b class="vermelho">R$ 112,02</b><span>Conv. página→checkout: 7,8%</span></div>
+    <div class="kpi"><small>OPS001</small><b>R$ 36,70</b><span>Pág→checkout: 18,9%</span></div>
+    <div class="kpi"><small>MEIF004</small><b>R$ 53,37</b><span>Pág→checkout: 12,9%</span></div>
+    <div class="kpi"><small>LPICT001</small><b>R$ 39,07</b><span>Pág→checkout: 16,4%</span></div>
+    <div class="kpi"><small>IFB-ICV (atual)</small><b class="verde">R$ 33,17</b><span class="vermelho">Pág→checkout: 7,8%</span></div>
   </div>
 
   <div class="callout bad">
-    <b>Existe uma correlação direta e limpa:</b> quanto maior o ticket do ingresso, menor a conversão página→checkout. MEIF004 (R$ 53) já convertia menos que OPS001 (R$ 37). O IFB-ICV, com ticket <b>3× maior</b>, converte menos da metade.<br><br>
-    O problema não é cobrar mais — é que <b>o preço subiu 3× mas a página continua vendendo como se fosse um ingresso de R$ 37</b>. Com ticket alto, a página precisa fazer muito mais trabalho de justificativa de valor antes do CTA.
+    <b>🔴 O ingresso mais barato converte menos da metade do que o mais caro.</b> MEIF004 cobrava R$ 53 (60% mais caro) e convertia 12,9%. O IFB-ICV cobra R$ 33 e converte 7,8%. Se preço fosse a variável determinante, seria o contrário.<br><br>
+    <b>Conclusão:</b> o problema não é quanto se cobra — é <b>o que a página comunica antes do CTA</b>. Baixar preço não resolveria; o gargalo é convencimento, não acessibilidade.
   </div>
 
-  <h3>Sinal de reforço: os order bumps também caíram</h3>
-  <p class="intro" style="margin-bottom:16px">O <b>Mapa Clínico</b> é o mesmo order bump usado no LPICT001. Mesma oferta, mesma mecânica — e menos da metade da anexação.</p>
+  <h3>O que mudou de fato entre os lançamentos</h3>
+  <ul class="reading">
+    <li><b>O tema da dor mudou.</b> OPS001 (Pilares da Saúde), MEIF004 (Mecanismos Inflamatórios) e LPICT001 (Corpo Intoxicado Não Emagrece) eram temas <b>clínicos</b> — dor concreta e imediata da paciente. O IFB-ICV vende <b>posicionamento e agenda</b> — uma dor de negócio, mais abstrata e menos urgente para o mesmo público.</li>
+    <li><b>Order bumps caíram junto.</b> O Mapa Clínico, mesma oferta do LPICT001, despencou de 13,25% para 5,83% de anexação — reforçando que a página está gerando menos desejo, não que o público não tem dinheiro.</li>
+    <li><b>71% das vendas são orgânicas.</b> Quem já conhece a Fernanda compra. Quem chega frio pela página não se convence — exatamente o padrão de uma oferta que depende de contexto prévio para fazer sentido.</li>
+  </ul>
+
+  <div class="callout warn">
+    ⚠️ <b>Correção metodológica:</b> uma versão anterior deste relatório apresentou o ticket do IFB-ICV como R$ 112 e sustentou que o preço havia triplicado. O valor estava errado — a receita do ingresso foi dividida pelas vendas do pixel (61) em vez do total de ingressos (206). O ticket correto é <b>R$ 33,17</b> e a hipótese de preço foi descartada.
+  </div>
+</div></section>
+
+<!-- 04B CONVERSÃO POR PÁGINA -->
+<section class="bg"><div class="wrap">
+  <div class="section-label">Por página</div>
+  <h2>Conversão de cada página do lançamento atual</h2>
+  <p class="intro">Todas as páginas em teste no IFB-ICV, com o funil completo do tráfego pago. Ordenado por investimento.</p>
 
   <div class="tablecard scroll"><table>
-    <thead><tr><th>Order bump</th><th>LPICT001 (mai/26)</th><th>IFB-ICV (atual)</th><th>Variação</th></tr></thead>
+    <thead><tr><th>Página</th><th>Invest.</th><th>Impress.</th><th>CTR</th><th>Vis. página</th><th>Custo/vis.</th><th>Checkouts</th><th>Pág→Chk</th><th>Custo/chk</th><th>Vendas</th><th>Pág→Venda</th><th>CPA</th></tr></thead>
     <tbody>
-      <tr class="destaque"><td><b>Mapa Clínico do Emagrecimento</b></td><td class="best">13,25%</td><td class="atual">5,83%</td><td class="atual">−56%</td></tr>
-      <tr><td>Segunda Cadeira</td><td>1,77%</td><td class="best">4,37%</td><td class="best">+147%</td></tr>
-      <tr><td>Gravação Vitalícia</td><td>—</td><td>5,83%</td><td>novo</td></tr>
-      <tr><td>Curso Os Pilares</td><td>2,47%</td><td>3,40%</td><td class="best">+38%</td></tr>
+      <tr><td><b>V1</b> (principal)</td><td>R$ 11.837</td><td>123.460</td><td>1,58%</td><td>1.486</td><td>R$ 9,07</td><td>133</td><td class="best">9,0%</td><td>R$ 101,31</td><td><b>43</b></td><td class="best">2,89%</td><td class="best">R$ 313,34</td></tr>
+      <tr><td><b>V2</b></td><td>R$ 4.074</td><td>38.775</td><td>2,19%</td><td>651</td><td class="best">R$ 7,12</td><td>48</td><td>7,4%</td><td class="best">R$ 96,61</td><td><b>17</b></td><td>2,61%</td><td>R$ 272,79</td></tr>
+      <tr><td><b>Crescimento Clínico</b> <span class="tag tag-warn">nova</span></td><td>R$ 1.388</td><td>7.840</td><td>1,76%</td><td>86</td><td class="atual">R$ 18,37</td><td>5</td><td>5,8%</td><td class="atual">R$ 315,92</td><td>2</td><td>2,33%</td><td>R$ 789,81</td></tr>
+      <tr><td><b>V3</b></td><td>R$ 637</td><td>4.563</td><td class="best">2,70%</td><td>90</td><td>R$ 8,05</td><td>2</td><td class="atual">2,2%</td><td>R$ 362,45</td><td>0</td><td>0,00%</td><td>—</td></tr>
+      <tr><td><b>Próxima Etapa V</b> <span class="tag tag-warn">nova</span></td><td>R$ 323</td><td>2.663</td><td>2,10%</td><td>46</td><td>R$ 8,00</td><td>1</td><td class="atual">2,2%</td><td>R$ 367,78</td><td>0</td><td>0,00%</td><td>—</td></tr>
+      <tr><td><b>Valor do Cuidado V</b> <span class="tag tag-warn">nova</span></td><td>R$ 270</td><td>1.376</td><td>2,69%</td><td>29</td><td>R$ 10,62</td><td>0</td><td class="atual">0,0%</td><td>—</td><td>0</td><td>0,00%</td><td>—</td></tr>
+      <tr><td><b>Ser Encontrada V</b> <span class="tag tag-warn">nova</span></td><td>R$ 252</td><td>1.777</td><td>1,69%</td><td>19</td><td class="atual">R$ 15,10</td><td>0</td><td class="atual">0,0%</td><td>—</td><td>0</td><td>0,00%</td><td>—</td></tr>
     </tbody>
-    <tfoot><tr><td>Anexação total sobre ingressos</td><td>~17,5%</td><td>19,4%</td><td>—</td></tr></tfoot>
+    <tfoot><tr><td>TOTAL</td><td>R$ 18.781</td><td>180.454</td><td>1,76%</td><td>2.407</td><td>R$ 8,88</td><td>189</td><td>7,9%</td><td>R$ 113,11</td><td>62</td><td>2,58%</td><td>R$ 344,81</td></tr></tfoot>
   </table></div>
 
   <div class="callout">
-    💡 A anexação total até subiu um pouco, mas a <b>receita</b> dos bumps caiu de 53,3% para 41,9% do total — porque o bump mais caro e mais rentável (Mapa Clínico) despencou. Quem paga R$ 112 no ingresso tem menos fôlego para somar mais R$ 145 de bump. É o mesmo efeito de preço se repetindo dentro do checkout.
+    <b>📌 Leitura das páginas:</b>
+    <ul>
+      <li><b>V1 concentra 63% da verba e 69% das vendas</b> — é a página que sustenta o lançamento, com a melhor conversão (9,0% pág→checkout) e o melhor CPA entre as que têm volume.</li>
+      <li><b>V2 tem o menor custo por visita (R$ 7,12) e por checkout (R$ 96,61)</b>, mas converte um pouco menos que a V1. É a segunda mais eficiente e merece mais verba.</li>
+      <li><b>V3 tem o melhor CTR (2,70%) mas a pior conversão de página (2,2%)</b> — o criativo atrai, a página não segura. Candidata a revisão ou pausa.</li>
+      <li><b>As 4 páginas novas (VSL) somam R$ 2.233 e apenas 2 vendas.</b> Ainda com poucos dias e volume baixíssimo (19 a 86 visitas cada) — é cedo para julgar, mas nenhuma mostrou sinal superior à V1 até aqui.</li>
+      <li>⚠️ Mesmo a melhor página (V1, 9,0%) está <b>abaixo da média histórica de 16,1%</b> e do benchmark de 20%. O problema é estrutural do funil atual, não de uma variante específica.</li>
+    </ul>
   </div>
 </div></section>
 
@@ -299,7 +324,7 @@
   <p class="intro">Priorizado pelo retorno estimado na simulação — não pela facilidade de execução.</p>
 
   <ol class="acoes">
-    <li><b>Testar preço e ancoragem na página</b> — maior alavanca isolada (2,1× mais vendas). Se o ingresso a R$ 112 é estratégico, a página precisa justificar esse valor muito melhor: comparar com o custo de não resolver o problema, mostrar o que está incluso item a item, ancorar contra o preço cheio. Alternativa: testar um lote de entrada mais barato para recuperar volume de checkout e capturar o valor no back-end.</li>
+    <li><b>Reescrever a página para o novo tema</b> — maior alavanca isolada (2,1× mais vendas). O preço já está descartado como causa (é o menor dos 4 lançamentos). O que mudou foi o <b>tipo de dor</b>: os lançamentos anteriores vendiam solução clínica; este vende posicionamento profissional. A página precisa tornar essa dor concreta e urgente — mostrar o custo real de continuar invisível, com números e cenários, não só promessa de transformação.</li>
     <li><b>Quebrar objeção antes do CTA</b> — hoje 92% de quem chega na página não inicia o checkout. Reforçar prova social (depoimentos de alunas), detalhar exatamente o que a pessoa leva, deixar a garantia explícita e visível. É a etapa com maior vazamento de todo o funil.</li>
     <li><b>Recuperar o Mapa Clínico como order bump</b> — caiu de 13,25% para 5,83% com a mesma oferta. Testar reposicionamento no checkout, novo copy ou um bump de entrada mais barato. Voltar à faixa de 50% de receita em bumps compensaria boa parte do CPA alto.</li>
     <li><b>Criativo é o quarto item, não o primeiro</b> — o CTR de 1,76% está abaixo do mínimo de 1,95% e merece atenção, mas melhorá-lo sozinho rende bem menos que a página. Os carrosséis novos já mostram caminho: a campanha [27] entregou CPA de R$ 168 (metade da média do lançamento). Seguir a linha narrativa dos criativos de menor CPA (ADV02, ADI11, ADI05, ADV05, ADV03).</li>
@@ -326,7 +351,7 @@
     </div>
     <p>Análise comparativa gerada em 06/08/2026 · Central de Estratégia e Resultados<br>
     Fontes: relatórios completos OPS001 (mar/26), MEIF004 (dez/25–fev/26), LPICT001 (mai/26) e dados ao vivo do IFB-ICV-2026 (Meta Ads + Hotmart)<br>
-    <a href="https://britomidiascompany-stack.github.io/ifb/" style="color:#A78BFA">← Voltar ao relatório do IFB-ICV-2026</a> · © Brito Mídias × Instituto Fernanda Ben</p>
+    <a href="index.html" style="color:#A78BFA">← Relatório IFB-ICV-2026</a> · <a href="criativos-novos.html" style="color:#A78BFA">Criativos novos</a> · © Brito Mídias × Instituto Fernanda Ben</p>
   </div>
 </footer>
 </body>
