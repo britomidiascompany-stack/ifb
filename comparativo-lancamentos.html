@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparativo de Lançamentos · IFB | Brito Mídias</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --roxo:#7C3AED; --roxo-dark:#5B21B6; --roxo-deep:#3B0F73; --roxo-light:#A78BFA; --roxo-xlight:#EDE9FE;
+    --ink:#141018; --cinza:#5B5566; --linha:#E7E3EE; --bg:#FFFFFF; --soft:#FAF9FC;
+    --verde:#059669; --vermelho:#DC2626; --amarelo:#D97706;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:Poppins,system-ui,sans-serif;font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 28px}
+  a{color:var(--roxo-dark);text-decoration:none}
+  h1,h2{font-weight:800;letter-spacing:-.02em;line-height:1.08}
+  b,strong{font-weight:700}
+
+  .hero{position:relative;overflow:hidden;color:#fff;padding:52px 0 60px;
+    background:radial-gradient(1100px 500px at 78% -10%,rgba(124,58,237,.55),transparent 60%),linear-gradient(150deg,#0A0A0A 0%,#17111F 45%,#3B0F73 100%)}
+  .grid-mask{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.14) 1px,transparent 1px);background-size:44px 44px;
+    -webkit-mask-image:radial-gradient(650px 400px at 70% 0%,#000,transparent 75%);mask-image:radial-gradient(650px 400px at 70% 0%,#000,transparent 75%)}
+  .hero .wrap{position:relative}
+  .brand{display:flex;align-items:center;gap:16px}
+  .brand svg{width:50px;height:50px}
+  .brand .word{display:flex;align-items:center;gap:13px;font-weight:300;color:#fff}
+  .brand .word b{font-weight:800;font-size:21px}
+  .brand .word .bar{width:2px;height:32px;background:rgba(255,255,255,.55)}
+  .brand .word span{font-size:21px;letter-spacing:.22em}
+  .hpill{display:inline-block;margin:30px 0 18px;padding:8px 16px;border:1px solid rgba(167,139,250,.5);border-radius:100px;font-size:12.5px;font-weight:500;color:#EDE9FE;background:rgba(124,58,237,.18)}
+  h1{font-size:44px}
+  .hsub{margin-top:16px;font-weight:300;color:#D8D2E8;font-size:15.5px;max-width:760px}
+
+  section{padding:56px 0}
+  section.bg{background:var(--bg)} section.soft{background:var(--soft)}
+  .section-label{display:flex;align-items:center;gap:12px;font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--roxo)}
+  .section-label::before{content:"";width:34px;height:2px;background:var(--roxo);border-radius:2px}
+  h2{font-size:30px;margin:14px 0 6px}
+  h3{font-size:19px;font-weight:700;margin:26px 0 8px}
+  .intro{color:var(--cinza);font-size:15px;max-width:820px;margin-bottom:28px}
+
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .kpi{border:1px solid var(--linha);border-radius:16px;padding:20px;background:var(--bg)}
+  .kpi small{display:block;color:var(--roxo);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+  .kpi b{display:block;font-size:27px;font-weight:700;letter-spacing:-.02em;margin:8px 0 4px}
+  .kpi span{color:var(--cinza);font-size:12.5px;font-weight:300}
+  .kpi b.verde{color:var(--verde)} .kpi b.vermelho{color:var(--vermelho)} .kpi b.amarelo{color:var(--amarelo)} .kpi b.roxo{color:var(--roxo)}
+  section.soft .kpi{background:#fff}
+
+  .callout{background:#fff;border:1px solid var(--linha);border-left:3px solid var(--roxo);border-radius:12px;padding:16px 18px;font-size:14px;font-weight:300;color:#3f3a4a;margin-top:22px}
+  .callout b{color:var(--ink)}
+  .callout.warn{border-left-color:var(--amarelo);background:#FFFBF3}
+  .callout.bad{border-left-color:var(--vermelho);background:#FEF4F4}
+  .callout.good{border-left-color:var(--verde);background:#F1FBF7}
+  .callout ul{list-style:none;margin-top:8px}
+  .callout li{padding:5px 0 5px 20px;position:relative}
+  .callout li::before{content:"▸";position:absolute;left:0;color:var(--roxo)}
+  section.soft .callout{background:#fff}
+
+  .tablecard{border:1px solid var(--linha);border-radius:16px;overflow:hidden;background:#fff}
+  .scroll{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:680px}
+  thead th{background:var(--soft);color:var(--roxo);font-size:11px;letter-spacing:.06em;text-transform:uppercase;text-align:right;padding:13px 14px;font-weight:600;white-space:nowrap}
+  thead th:first-child{text-align:left}
+  tbody td{padding:12px 14px;text-align:right;border-top:1px solid var(--linha);white-space:nowrap;font-weight:400}
+  tbody td:first-child{text-align:left;font-weight:500}
+  tbody tr:hover{background:#FBFAFE}
+  tbody tr.destaque{background:#FEF4F4}
+  tbody tr.destaque:hover{background:#FDEBEB}
+  tfoot td{padding:13px 14px;text-align:right;border-top:2px solid var(--linha);font-weight:700;background:var(--soft)}
+  tfoot td:first-child{text-align:left}
+  .atual{color:var(--vermelho);font-weight:700}
+  .best{color:var(--verde);font-weight:700}
+  .tag{display:inline-block;padding:3px 11px;border-radius:100px;font-size:11px;font-weight:600;border:1px solid var(--linha);color:var(--cinza)}
+  .tag-bad{background:#FDE8E8;color:#B91C1C;border-color:transparent}
+  .tag-ok{background:#E7F6F0;color:#047857;border-color:transparent}
+  .tag-warn{background:#FEF3C7;color:#92400E;border-color:transparent}
+
+  /* diagnóstico de etapas */
+  .stages{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .stage{display:grid;grid-template-columns:230px 1fr 150px;align-items:center;gap:16px;padding:14px 18px;border:1px solid var(--linha);border-radius:14px;background:#fff}
+  .stage.gargalo{border-color:rgba(220,38,38,.45);background:linear-gradient(180deg,#FEF4F4,#fff)}
+  .stage .sname{font-size:13.5px;font-weight:600}
+  .stage .sname small{display:block;font-weight:300;color:var(--cinza);font-size:11.5px}
+  .sbar{position:relative;height:26px;background:#F1EDF9;border-radius:8px;overflow:hidden}
+  .sbar .fill{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,#7C3AED,#A78BFA);border-radius:8px}
+  .stage.gargalo .sbar .fill{background:linear-gradient(90deg,#DC2626,#F87171)}
+  .sbar .ref{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--ink);opacity:.55}
+  .sval{font-size:14px;font-weight:700;text-align:right}
+  .sval small{display:block;font-weight:400;color:var(--cinza);font-size:11px}
+
+  .simgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+  .simcard{border:1px solid var(--linha);border-radius:16px;padding:20px;background:#fff}
+  .simcard.win{border-color:rgba(5,150,105,.45);background:linear-gradient(180deg,#F1FBF7,#fff)}
+  .simcard .st{font-size:12px;font-weight:600;color:var(--roxo);text-transform:uppercase;letter-spacing:.1em}
+  .simcard .sv{font-size:30px;font-weight:800;margin:8px 0 2px}
+  .simcard.win .sv{color:var(--verde)}
+  .simcard .sd{font-size:12.5px;color:var(--cinza)}
+
+  ul.reading{list-style:none}
+  ul.reading li{padding:8px 0 8px 24px;position:relative;font-size:14.5px;color:#3f3a4a;font-weight:300}
+  ul.reading li::before{content:"▸";position:absolute;left:0;color:var(--roxo);font-weight:700}
+  ul.reading b{color:var(--ink)}
+  ol.acoes{list-style:none;counter-reset:a}
+  ol.acoes li{counter-increment:a;padding:14px 0 14px 46px;position:relative;font-size:14.5px;color:#3f3a4a;font-weight:300;border-bottom:1px solid var(--linha)}
+  ol.acoes li:last-child{border-bottom:none}
+  ol.acoes li::before{content:counter(a);position:absolute;left:0;top:12px;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#7C3AED,#5B21B6);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+  ol.acoes li b{color:var(--ink)}
+
+  footer{background:#141018;color:#B8B2C6;padding:40px 0 56px;font-size:13px;font-weight:300}
+  footer .brand.foot{margin-bottom:16px}
+  footer .brand .word b, footer .brand .word span{color:#EDE9FE}
+  footer .brand .word .bar{background:rgba(167,139,250,.6)}
+  footer p{max-width:800px}
+
+  @media(max-width:860px){
+    h1{font-size:32px} h2{font-size:25px}
+    .kpis{grid-template-columns:1fr 1fr}
+    .stage{grid-template-columns:1fr;gap:8px}
+    .stage .sval{text-align:left}
+    .simgrid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="grid-mask"></div>
+  <div class="wrap">
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-label="BM Mídias">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+        <line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line>
+        <line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line>
+        <line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line>
+        <line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line>
+        <line x1="10" y1="27" x2="50" y2="33"></line>
+      </svg>
+      <span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span>
+    </div>
+    <div class="hpill">📊 Análise comparativa · 4 lançamentos · atualizado em 06/08/2026</div>
+    <h1>Comparativo de Lançamentos</h1>
+    <p class="hsub">Instituto Fernanda Ben · OPS001 (mar/26) · MEIF004 (dez/25–fev/26) · LPICT001 (mai/26) · IFB-ICV-2026 (jul–ago/26)<br>
+    Onde o funil atual está perdendo dinheiro e o que precisa ser corrigido.</p>
+  </div>
+</header>
+
+<!-- 01 VEREDITO -->
+<section class="bg"><div class="wrap">
+  <div class="section-label">Veredito</div>
+  <h2>O gargalo é a PÁGINA, não o criativo</h2>
+  <p class="intro">Comparando as 4 campanhas etapa por etapa, três das quatro etapas do funil estão saudáveis. Uma delas caiu pela metade — e é ela que está estourando o CPA.</p>
+
+  <div class="stages">
+    <div class="stage">
+      <div class="sname">1. CTR — o criativo<small>Impressão → clique</small></div>
+      <div class="sbar"><div class="fill" style="width:75.5%"></div><div class="ref" style="left:100%"></div></div>
+      <div class="sval">1,76% <small>média histórica: 2,33% · −24%</small></div>
+    </div>
+    <div class="stage">
+      <div class="sname">2. Connect rate — a entrega<small>Clique → página carregada</small></div>
+      <div class="sbar"><div class="fill" style="width:100%"></div><div class="ref" style="left:98%"></div></div>
+      <div class="sval">75,7% <small>média histórica: 74,2% · +2%</small></div>
+    </div>
+    <div class="stage gargalo">
+      <div class="sname">3. Página → Checkout — a oferta<small>Visitou a página → iniciou compra</small></div>
+      <div class="sbar"><div class="fill" style="width:48.5%"></div><div class="ref" style="left:100%"></div></div>
+      <div class="sval" style="color:var(--vermelho)">7,8% <small>média histórica: 16,1% · −51%</small></div>
+    </div>
+    <div class="stage">
+      <div class="sname">4. Checkout → Compra — o checkout<small>Iniciou compra → pagou</small></div>
+      <div class="sbar"><div class="fill" style="width:94%"></div><div class="ref" style="left:100%"></div></div>
+      <div class="sval">32,4% <small>média histórica: 34,5% · −6%</small></div>
+    </div>
+  </div>
+
+  <div class="callout bad">
+    <b>🔴 De cada 100 pessoas que chegam na página hoje, apenas 8 iniciam o checkout.</b> Nos lançamentos anteriores esse número era de 13 a 19. O resultado direto: o custo por checkout saltou de ~R$ 41 (média) para <b>R$ 113</b> — 2,6× mais caro. Como quem chega no checkout continua comprando normalmente (32,4%, dentro da média), o problema não é o checkout nem o preço final: é a página não estar convencendo a pessoa a dar o próximo passo.
+  </div>
+</div></section>
+
+<!-- 02 SIMULAÇÃO -->
+<section class="soft"><div class="wrap">
+  <div class="section-label">Quanto vale corrigir</div>
+  <h2>Simulação com o mesmo investimento</h2>
+  <p class="intro">Mantendo exatamente os R$ 21.255 já investidos no IFB-ICV, o que aconteceria se cada etapa voltasse à média dos 3 lançamentos anteriores.</p>
+
+  <div class="simgrid">
+    <div class="simcard">
+      <div class="st">Hoje</div>
+      <div class="sv">61 vendas</div>
+      <div class="sd">CPA R$ 348,44<br>2.400 visitas → 188 checkouts</div>
+    </div>
+    <div class="simcard">
+      <div class="st">Se só o criativo (CTR) melhorasse</div>
+      <div class="sv">81 vendas</div>
+      <div class="sd">CPA R$ 263,96 · <b>1,3× mais vendas</b><br>CTR 2,33%</div>
+    </div>
+    <div class="simcard win">
+      <div class="st">Se só a página melhorasse</div>
+      <div class="sv">125 vendas</div>
+      <div class="sd">CPA R$ 169,88 · <b>2,1× mais vendas</b><br>Pág→Checkout 16,1%</div>
+    </div>
+  </div>
+
+  <div class="callout good" style="margin-top:20px">
+    <b>✅ Corrigindo os dois (página + criativo): 165 vendas · CPA R$ 128,69 — 2,7× mais vendas com a mesma verba.</b><br>
+    Mas repare na ordem de grandeza: mexer na <b>página vale quase o dobro</b> de mexer no criativo. É por aí que a otimização deve começar.
+  </div>
+</div></section>
+
+<!-- 03 TABELA COMPARATIVA -->
+<section class="bg"><div class="wrap">
+  <div class="section-label">Números lado a lado</div>
+  <h2>Comparativo completo de métricas</h2>
+  <p class="intro">Todas as métricas de tráfego dos 4 lançamentos. CPM/CTR/CPC calculados sobre investimento bruto (metodologia dos relatórios); custos por etapa e CPA sobre investimento c/ imposto (13,83%).</p>
+
+  <div class="tablecard scroll"><table>
+    <thead>
+      <tr><th>Métrica</th><th>OPS001<br>mar/26</th><th>MEIF004<br>dez–fev</th><th>LPICT001<br>mai/26</th><th>IFB-ICV<br>atual</th><th>Benchmark</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><b>Investimento c/ imp.</b></td><td>R$ 82.047</td><td>R$ 118.275</td><td>R$ 57.117</td><td>R$ 21.255</td><td>—</td></tr>
+      <tr><td>Impressões</td><td>828.271</td><td>1.227.624</td><td>395.791</td><td>179.969</td><td>—</td></tr>
+      <tr><td>CPM</td><td class="best">R$ 87,02</td><td>R$ 87,97</td><td>R$ 126,78</td><td>R$ 103,75</td><td>Alvo R$ 95</td></tr>
+      <tr class="destaque"><td><b>CTR</b> <span class="tag tag-warn">atenção</span></td><td>2,15%</td><td>2,13%</td><td class="best">2,70%</td><td class="atual">1,76%</td><td>Mín. 1,95%</td></tr>
+      <tr><td>CPC</td><td class="best">R$ 4,05</td><td>R$ 4,14</td><td>R$ 4,69</td><td class="atual">R$ 5,89</td><td>Máx. R$ 6,00</td></tr>
+      <tr><td>Connect rate <span class="tag tag-ok">ok</span></td><td>76,2%</td><td>72,1%</td><td>74,3%</td><td>75,7%</td><td>Mín. 80%</td></tr>
+      <tr><td>Custo / visualização de página</td><td class="best">R$ 6,05</td><td>R$ 6,29</td><td>R$ 7,19</td><td class="atual">R$ 8,86</td><td>—</td></tr>
+      <tr class="destaque"><td><b>Conv. Página → Checkout</b> <span class="tag tag-bad">gargalo</span></td><td class="best">18,9%</td><td>12,9%</td><td>16,4%</td><td class="atual">7,8%</td><td>Mín. 20%</td></tr>
+      <tr class="destaque"><td><b>Custo / checkout</b> <span class="tag tag-bad">gargalo</span></td><td class="best">R$ 32,05</td><td>R$ 48,65</td><td>R$ 43,77</td><td class="atual">R$ 113,06</td><td>—</td></tr>
+      <tr><td>Conv. Checkout → Compra <span class="tag tag-ok">ok</span></td><td>34,8%</td><td>30,9%</td><td class="best">37,7%</td><td>32,4%</td><td>Bom &gt; 30%</td></tr>
+      <tr class="destaque"><td><b>Conv. Página → Venda</b></td><td class="best">6,58%</td><td>4,00%</td><td>6,19%</td><td class="atual">2,54%</td><td>—</td></tr>
+      <tr><td>Vendas (pixel)</td><td>892</td><td>752</td><td>492</td><td>61</td><td>—</td></tr>
+      <tr class="destaque"><td><b>CPA</b></td><td class="best">R$ 91,98</td><td>R$ 157,28</td><td>R$ 116,09</td><td class="atual">R$ 348,44</td><td>Alvo R$ 99</td></tr>
+      <tr><td>Ticket do ingresso</td><td>R$ 36,70</td><td>R$ 53,37</td><td>R$ 39,07</td><td class="atual">R$ 112,02</td><td>—</td></tr>
+      <tr><td>% da receita vinda de bumps</td><td>50,5%</td><td>47,8%</td><td class="best">53,3%</td><td class="atual">41,9%</td><td>—</td></tr>
+      <tr><td>ROAS front-end</td><td class="best">0,92x</td><td>0,72x</td><td>0,83x</td><td>0,55x</td><td>—</td></tr>
+      <tr><td>Exposição</td><td>−R$ 6.495</td><td>−R$ 33.310</td><td>−R$ 9.721</td><td>−R$ 9.503</td><td>—</td></tr>
+      <tr><td>% vendas orgânicas</td><td>12,5%</td><td>9,4%</td><td>13,1%</td><td class="atual">71,0%</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="callout warn">
+    <b>⚠️ Contexto importante ao ler esta tabela:</b>
+    <ul>
+      <li>O IFB-ICV investiu <b>3 a 6× menos</b> que os anteriores (R$ 21 mil vs R$ 57–118 mil) e está em curso — parte da diferença vem de escala e maturidade do pixel.</li>
+      <li><b>71% das vendas são orgânicas</b> (lista/e-mail), contra 9–13% nos anteriores. Este lançamento tem perfil totalmente diferente: é puxado pela base, não pelo tráfego.</li>
+      <li>Ainda assim, a queda de <b>51% na conversão da página</b> é grande demais para ser explicada só por escala.</li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- 04 A HIPÓTESE DO PREÇO -->
+<section class="soft"><div class="wrap">
+  <div class="section-label">Causa provável</div>
+  <h2>O ticket triplicou — e a conversão caiu pela metade</h2>
+  <p class="intro">A explicação mais consistente com os dados não é design de página nem velocidade: é <b>preço e valor percebido</b>.</p>
+
+  <div class="kpis">
+    <div class="kpi"><small>Ticket OPS001</small><b>R$ 36,70</b><span>Conv. página→checkout: 18,9%</span></div>
+    <div class="kpi"><small>Ticket LPICT001</small><b>R$ 39,07</b><span>Conv. página→checkout: 16,4%</span></div>
+    <div class="kpi"><small>Ticket MEIF004</small><b>R$ 53,37</b><span>Conv. página→checkout: 12,9%</span></div>
+    <div class="kpi"><small>Ticket IFB-ICV</small><b class="vermelho">R$ 112,02</b><span>Conv. página→checkout: 7,8%</span></div>
+  </div>
+
+  <div class="callout bad">
+    <b>Existe uma correlação direta e limpa:</b> quanto maior o ticket do ingresso, menor a conversão página→checkout. MEIF004 (R$ 53) já convertia menos que OPS001 (R$ 37). O IFB-ICV, com ticket <b>3× maior</b>, converte menos da metade.<br><br>
+    O problema não é cobrar mais — é que <b>o preço subiu 3× mas a página continua vendendo como se fosse um ingresso de R$ 37</b>. Com ticket alto, a página precisa fazer muito mais trabalho de justificativa de valor antes do CTA.
+  </div>
+
+  <h3>Sinal de reforço: os order bumps também caíram</h3>
+  <p class="intro" style="margin-bottom:16px">O <b>Mapa Clínico</b> é o mesmo order bump usado no LPICT001. Mesma oferta, mesma mecânica — e menos da metade da anexação.</p>
+
+  <div class="tablecard scroll"><table>
+    <thead><tr><th>Order bump</th><th>LPICT001 (mai/26)</th><th>IFB-ICV (atual)</th><th>Variação</th></tr></thead>
+    <tbody>
+      <tr class="destaque"><td><b>Mapa Clínico do Emagrecimento</b></td><td class="best">13,25%</td><td class="atual">5,83%</td><td class="atual">−56%</td></tr>
+      <tr><td>Segunda Cadeira</td><td>1,77%</td><td class="best">4,37%</td><td class="best">+147%</td></tr>
+      <tr><td>Gravação Vitalícia</td><td>—</td><td>5,83%</td><td>novo</td></tr>
+      <tr><td>Curso Os Pilares</td><td>2,47%</td><td>3,40%</td><td class="best">+38%</td></tr>
+    </tbody>
+    <tfoot><tr><td>Anexação total sobre ingressos</td><td>~17,5%</td><td>19,4%</td><td>—</td></tr></tfoot>
+  </table></div>
+
+  <div class="callout">
+    💡 A anexação total até subiu um pouco, mas a <b>receita</b> dos bumps caiu de 53,3% para 41,9% do total — porque o bump mais caro e mais rentável (Mapa Clínico) despencou. Quem paga R$ 112 no ingresso tem menos fôlego para somar mais R$ 145 de bump. É o mesmo efeito de preço se repetindo dentro do checkout.
+  </div>
+</div></section>
+
+<!-- 05 O QUE FAZER -->
+<section class="bg"><div class="wrap">
+  <div class="section-label">Plano de ação</div>
+  <h2>O que precisa ser melhorado, em ordem de impacto</h2>
+  <p class="intro">Priorizado pelo retorno estimado na simulação — não pela facilidade de execução.</p>
+
+  <ol class="acoes">
+    <li><b>Testar preço e ancoragem na página</b> — maior alavanca isolada (2,1× mais vendas). Se o ingresso a R$ 112 é estratégico, a página precisa justificar esse valor muito melhor: comparar com o custo de não resolver o problema, mostrar o que está incluso item a item, ancorar contra o preço cheio. Alternativa: testar um lote de entrada mais barato para recuperar volume de checkout e capturar o valor no back-end.</li>
+    <li><b>Quebrar objeção antes do CTA</b> — hoje 92% de quem chega na página não inicia o checkout. Reforçar prova social (depoimentos de alunas), detalhar exatamente o que a pessoa leva, deixar a garantia explícita e visível. É a etapa com maior vazamento de todo o funil.</li>
+    <li><b>Recuperar o Mapa Clínico como order bump</b> — caiu de 13,25% para 5,83% com a mesma oferta. Testar reposicionamento no checkout, novo copy ou um bump de entrada mais barato. Voltar à faixa de 50% de receita em bumps compensaria boa parte do CPA alto.</li>
+    <li><b>Criativo é o quarto item, não o primeiro</b> — o CTR de 1,76% está abaixo do mínimo de 1,95% e merece atenção, mas melhorá-lo sozinho rende bem menos que a página. Os carrosséis novos já mostram caminho: a campanha [27] entregou CPA de R$ 168 (metade da média do lançamento). Seguir a linha narrativa dos criativos de menor CPA (ADV02, ADI11, ADI05, ADV05, ADV03).</li>
+  </ol>
+
+  <div class="callout good">
+    <b>🎯 Resumo em uma frase:</b> o tráfego está entregando gente na página a um custo aceitável (R$ 8,86 por visita, contra R$ 6–7 do histórico) — o dinheiro está sendo perdido <b>depois do clique</b>, na conversão da página. Corrigir a página vale 2× corrigir o criativo, e as duas coisas juntas triplicariam o resultado com a mesma verba.
+  </div>
+</div></section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand foot">
+      <svg viewBox="0 0 100 100" fill="none" stroke="#A78BFA" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" aria-label="BM Mídias">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27"></polygon>
+        <polygon points="50,33 65,59 35,59"></polygon>
+        <line x1="50" y1="4" x2="50" y2="33"></line><line x1="90" y1="73" x2="65" y2="59"></line>
+        <line x1="10" y1="73" x2="35" y2="59"></line><line x1="90" y1="27" x2="50" y2="33"></line>
+        <line x1="90" y1="27" x2="65" y2="59"></line><line x1="50" y1="96" x2="65" y2="59"></line>
+        <line x1="50" y1="96" x2="35" y2="59"></line><line x1="10" y1="27" x2="35" y2="59"></line>
+        <line x1="10" y1="27" x2="50" y2="33"></line>
+      </svg>
+      <span class="word"><b>BM</b><i class="bar"></i><span>MÍDIAS</span></span>
+    </div>
+    <p>Análise comparativa gerada em 06/08/2026 · Central de Estratégia e Resultados<br>
+    Fontes: relatórios completos OPS001 (mar/26), MEIF004 (dez/25–fev/26), LPICT001 (mai/26) e dados ao vivo do IFB-ICV-2026 (Meta Ads + Hotmart)<br>
+    <a href="https://britomidiascompany-stack.github.io/ifb/" style="color:#A78BFA">← Voltar ao relatório do IFB-ICV-2026</a> · © Brito Mídias × Instituto Fernanda Ben</p>
+  </div>
+</footer>
+</body>
+</html>
