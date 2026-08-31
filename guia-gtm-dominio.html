@@ -68,18 +68,23 @@
   .codebox{
     position:relative;background:var(--ink);color:#E7E3EE;border-radius:14px;
     padding:18px 50px 18px 18px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-    font-size:12.5px;line-height:1.65;overflow-x:auto;white-space:pre;margin-top:6px;
+    font-size:12.5px;line-height:1.65;margin-top:6px;
   }
+  .codebox .codetext{display:block;overflow-x:auto;white-space:pre}
   .codebox .tag{color:var(--roxo-light)}
   .codebox .str{color:#93E4A6}
-  .copybtn{
-    position:absolute;top:10px;right:10px;background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:8px;
-    font-family:'Poppins',sans-serif;font-size:11px;font-weight:600;letter-spacing:.04em;
-    padding:6px 10px;cursor:pointer;transition:background .15s;
+  .iconbtn{
+    position:absolute;top:10px;right:10px;width:32px;height:32px;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
+    color:#fff;border-radius:8px;cursor:pointer;transition:background .15s;
+    display:flex;align-items:center;justify-content:center;padding:0;
   }
-  .copybtn:hover{background:rgba(255,255,255,.18)}
-  .copybtn.copied{background:var(--roxo);border-color:var(--roxo)}
+  .iconbtn:hover{background:rgba(255,255,255,.18)}
+  .iconbtn.copied{background:var(--roxo);border-color:var(--roxo)}
+  .iconbtn svg{width:15px;height:15px}
+  .iconbtn .ic-check{display:none}
+  .iconbtn.copied .ic-copy{display:none}
+  .iconbtn.copied .ic-check{display:block}
 
   .valuebox{
     display:flex;align-items:center;justify-content:space-between;gap:12px;
@@ -87,12 +92,11 @@
     padding:14px 16px;margin-top:6px;
   }
   .valuebox code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;color:var(--roxo-dark);word-break:break-all}
-  .valuebox button{
-    flex:none;background:transparent;border:1.5px solid var(--roxo-light);color:var(--roxo-dark);
-    border-radius:8px;font-family:'Poppins',sans-serif;font-size:11px;font-weight:600;
-    padding:7px 12px;cursor:pointer;
+  .iconbtn.dark{
+    position:static;flex:none;background:transparent;border:1.5px solid var(--roxo-light);color:var(--roxo-dark);
   }
-  .valuebox button.copied{background:var(--roxo);color:#fff;border-color:var(--roxo)}
+  .iconbtn.dark:hover{background:var(--roxo-xlight)}
+  .iconbtn.dark.copied{background:var(--roxo);color:#fff;border-color:var(--roxo)}
 
   .tip{
     display:flex;gap:12px;background:var(--roxo-xlight);border-radius:12px;padding:16px 18px;margin-top:24px;
@@ -168,14 +172,19 @@
       <div class="body">
         <h3>Cole este código o mais alto possível no <code>&lt;head&gt;</code> da página</h3>
         <p>Deve ficar antes de qualquer outro script, o mais próximo possível da abertura da tag <code>&lt;head&gt;</code>.</p>
-        <div class="codebox" id="code-head">&lt;!-- Google Tag Manager --&gt;
+        <div class="codebox">
+          <button class="iconbtn" onclick="copyBlock('code-head', this)" aria-label="Copiar código" title="Copiar código">
+            <svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <svg class="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </button>
+          <span class="codetext" id="code-head">&lt;!-- Google Tag Manager --&gt;
 &lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','<span class="str">GTM-NZHHDM6G</span>');&lt;/script&gt;
-&lt;!-- End Google Tag Manager --&gt;</div>
-        <button class="copybtn" onclick="copyBlock('code-head', this)" style="position:static;margin-top:10px;display:inline-block">Copiar código</button>
+&lt;!-- End Google Tag Manager --&gt;</span>
+        </div>
       </div>
     </div>
 
@@ -184,11 +193,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
       <div class="body">
         <h3>Cole este código imediatamente após a tag de abertura <code>&lt;body&gt;</code></h3>
         <p>Logo no início do <code>&lt;body&gt;</code>, antes de qualquer outro conteúdo da página.</p>
-        <div class="codebox" id="code-body">&lt;!-- Google Tag Manager (noscript) --&gt;
+        <div class="codebox">
+          <button class="iconbtn" onclick="copyBlock('code-body', this)" aria-label="Copiar código" title="Copiar código">
+            <svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <svg class="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </button>
+          <span class="codetext" id="code-body">&lt;!-- Google Tag Manager (noscript) --&gt;
 &lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=<span class="str">GTM-NZHHDM6G</span>"
 height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
-&lt;!-- End Google Tag Manager (noscript) --&gt;</div>
-        <button class="copybtn" onclick="copyBlock('code-body', this)" style="position:static;margin-top:10px;display:inline-block">Copiar código</button>
+&lt;!-- End Google Tag Manager (noscript) --&gt;</span>
+        </div>
       </div>
     </div>
 
@@ -239,7 +253,10 @@ height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&l
         </div>
         <div class="valuebox">
           <code id="txt-value">facebook-domain-verification=p39x8gc1cuqd6ufpny20vtgiupmofu</code>
-          <button onclick="copyValue('txt-value', this)">Copiar valor</button>
+          <button class="iconbtn dark" onclick="copyValue('txt-value', this)" aria-label="Copiar valor" title="Copiar valor">
+            <svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <svg class="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -290,24 +307,34 @@ height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&l
 </footer>
 
 <script>
+function markCopied(btn){
+  btn.classList.add('copied');
+  setTimeout(function(){ btn.classList.remove('copied'); }, 1800);
+}
+function copyText(text, btn){
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function(){ markCopied(btn); }).catch(function(){ fallbackCopy(text, btn); });
+  } else {
+    fallbackCopy(text, btn);
+  }
+}
+function fallbackCopy(text, btn){
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.top = '-1000px';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  try { document.execCommand('copy'); markCopied(btn); } catch (e) {}
+  document.body.removeChild(ta);
+}
 function copyBlock(id, btn){
-  var el = document.getElementById(id);
-  var text = el.innerText;
-  navigator.clipboard.writeText(text).then(function(){
-    var original = btn.textContent;
-    btn.textContent = 'Copiado ✓';
-    btn.classList.add('copied');
-    setTimeout(function(){ btn.textContent = original; btn.classList.remove('copied'); }, 1800);
-  });
+  copyText(document.getElementById(id).innerText, btn);
 }
 function copyValue(id, btn){
-  var el = document.getElementById(id);
-  navigator.clipboard.writeText(el.textContent).then(function(){
-    var original = btn.textContent;
-    btn.textContent = 'Copiado ✓';
-    btn.classList.add('copied');
-    setTimeout(function(){ btn.textContent = original; btn.classList.remove('copied'); }, 1800);
-  });
+  copyText(document.getElementById(id).textContent, btn);
 }
 </script>
 
