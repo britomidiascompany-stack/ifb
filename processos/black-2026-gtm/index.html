@@ -135,6 +135,12 @@
   .checklist{list-style:none;margin-top:8px}
   .checklist li{padding:10px 0;border-bottom:1px solid var(--linha);color:var(--ink);font-size:15px}
   .checklist li b{color:var(--roxo-dark)}
+  .who{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border-radius:100px;padding:4px 12px;margin-bottom:12px}
+  .who.dev{background:linear-gradient(90deg,#7C3AED,#5B21B6);color:#fff}
+  .who.bm{border:1px solid var(--roxo-light);color:var(--roxo-dark)}
+  details.ref{margin-top:8px;border:1px solid var(--linha);border-radius:14px;background:#fff;padding:18px 22px}
+  details.ref summary{cursor:pointer;font-weight:600;font-size:15px;color:var(--roxo-dark)}
+  details.ref[open] summary{margin-bottom:18px}
 </style>
 </head>
 <body>
@@ -156,202 +162,28 @@
     </div>
     <div class="section-label">GUIA TÉCNICO · IFB-BLACK-2026</div>
     <h1>Instalação do GTM e do evento de lead nas páginas do Black Pass</h1>
-    <p class="lead">Passo a passo para quem cuida das páginas no Lovable. Com isso o Pixel do Meta e o
-    GA4 passam a medir as visitas e os cadastros do Black — hoje as páginas não têm nenhum rastreamento.</p>
+    <p class="lead">Para quem cuida das páginas no Lovable: é só colar um prompt e publicar. Com isso o Pixel do
+    Meta e o GA4 passam a medir as visitas e os cadastros do Black — hoje as páginas não têm rastreamento.</p>
     <div class="pillrow">
-      <div class="pill">01 · Instalar o GTM</div>
-      <div class="pill">02 · Evento de lead</div>
-      <div class="pill">03 · Testar</div>
-      <div class="pill">04 · Prompt pronto do Lovable</div>
+      <div class="pill">01 · Colar o prompt</div>
+      <div class="pill">02 · Publicar</div>
+      <div class="pill">03 · Avisar</div>
     </div>
   </div>
 </div>
 
-<section class="block soft">
-  <div class="wrap">
-    <div class="section-label">Resumo</div>
-    <h2>O que precisa ser feito</h2>
-    <div class="fieldrow">
-      <div class="field"><small>Páginas</small><b>november.institutofernandaben.com.br<br>e /lista-prioritaria</b></div>
-      <div class="field"><small>Container GTM</small><b>GTM-KX2QL6XG</b></div>
-      <div class="field"><small>Projeto</small><b>Lovable (TanStack Start)</b></div>
-    </div>
-    <ul class="checklist">
-      <li><b>1.</b> Colar o GTM no <code>&lt;head&gt;</code> e no <code>&lt;body&gt;</code> do layout raiz — vale para as duas rotas.</li>
-      <li><b>2.</b> Acrescentar <code>event_id</code>, <code>email</code>, <code>name</code> e <code>phone</code> no evento <code>blackpass_lead_success</code>.</li>
-      <li><b>3.</b> Disparar <code>blackpass_page_view</code> também na <code>/lista-prioritaria</code>.</li>
-      <li><b>4.</b> Fazer um cadastro de teste e avisar a Brito Mídias.</li>
-    </ul>
-    <div class="tip">
-      <div class="ic">💡</div>
-      <p><b>Atalho:</b> se preferir, pule direto para a seção <b>04</b> — tem um prompt pronto para colar no
-      chat do Lovable que faz tudo isso de uma vez.</p>
-    </div>
-  </div>
-</section>
-
 <section class="block">
   <div class="wrap">
-    <div class="section-label">01</div>
-    <h2>Instalar o Google Tag Manager</h2>
-    <p class="intro">Dois trechos, em dois lugares do documento raiz. Como o site é uma aplicação com rotas,
-    colando no layout raiz o GTM passa a valer para <code>/</code> e <code>/lista-prioritaria</code> ao mesmo tempo.</p>
+    <span class="who dev">O que você precisa fazer</span>
+    <h2>3 passos, uns 5 minutos</h2>
+    <p class="intro">Páginas: <b>november.institutofernandaben.com.br</b> e <b>/lista-prioritaria</b> · Container GTM: <b>GTM-KX2QL6XG</b></p>
 
     <div class="step">
       <div class="num">1</div>
       <div class="body">
-        <h3>Este código o mais alto possível no <code>&lt;head&gt;</code></h3>
-        <p>No TanStack Start fica no <code>head()</code> da rota raiz (ex.: <code>src/routes/__root.tsx</code>). Se o projeto tiver <code>index.html</code>, no <code>&lt;head&gt;</code> dele.</p>
-        <div class="codebox ">
-          <button class="iconbtn" onclick="copyBlock('code-head', this)" aria-label="Copiar" title="Copiar">
-            <svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            <svg class="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          </button>
-          <span class="codetext" id="code-head">&lt;!-- Google Tag Manager --&gt;
-&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KX2QL6XG');&lt;/script&gt;
-&lt;!-- End Google Tag Manager --&gt;</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="num">2</div>
-      <div class="body">
-        <h3>Este código logo depois da abertura do <code>&lt;body&gt;</code></h3>
-        <p>No componente do documento raiz, antes de qualquer outro conteúdo.</p>
-        <div class="codebox ">
-          <button class="iconbtn" onclick="copyBlock('code-body', this)" aria-label="Copiar" title="Copiar">
-            <svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            <svg class="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          </button>
-          <span class="codetext" id="code-body">&lt;!-- Google Tag Manager (noscript) --&gt;
-&lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX2QL6XG"
-height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
-&lt;!-- End Google Tag Manager (noscript) --&gt;</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="tip">
-      <div class="ic">⚠️</div>
-      <p><b>Um container só:</b> o GTM tem que carregar <b>uma única vez</b> por página, sem duplicar na
-      navegação entre rotas. Não pode haver outro GTM instalado no projeto.</p>
-    </div>
-  </div>
-</section>
-
-<section class="block soft">
-  <div class="wrap">
-    <div class="section-label">02</div>
-    <h2>Evento de lead no dataLayer</h2>
-    <p class="intro">A página já dispara <code>blackpass_lead_success</code> quando o cadastro é confirmado.
-    O GTM usa esse evento para mandar o <b>Lead</b> ao Meta e ao GA4 — só falta incluir os dados abaixo
-    no mesmo push. Eles melhoram a correspondência do Meta (quem viu o anúncio × quem se cadastrou).</p>
-
-    <div class="step">
-      <div class="num">1</div>
-      <div class="body">
-        <h3>Campos no <code>blackpass_lead_success</code></h3>
-        <p>Disparar só depois que o servidor confirmar o cadastro. O <code>event_id</code> é gerado uma vez por
-        cadastro (vamos reutilizá-lo depois para enviar o mesmo lead pela API de Conversões sem duplicar).</p>
-        <div class="codebox ">
-          <button class="iconbtn" onclick="copyBlock('code-lead', this)" aria-label="Copiar" title="Copiar">
-            <svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            <svg class="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          </button>
-          <span class="codetext" id="code-lead">// Só depois que o servidor confirmar o cadastro com sucesso
-const eventId = crypto.randomUUID(); // gerar UMA vez por cadastro
-
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({
-  event: 'blackpass_lead_success',
-  event_id: eventId,                    // único por cadastro
-  email: email.trim().toLowerCase(),    // e-mail digitado
-  name: nome.trim(),                    // nome digitado
-  phone: '+' + (ddi + telefone).replace(/\D/g, '') // ex.: +5511999998888
-  // manter aqui os demais campos que o evento já envia hoje
-});</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="num">2</div>
-      <div class="body">
-        <h3>Page view na lista prioritária</h3>
-        <p>Hoje só a raiz dispara <code>blackpass_page_view</code>. A <code>/lista-prioritaria</code> precisa do mesmo evento.</p>
-        <div class="codebox ">
-          <button class="iconbtn" onclick="copyBlock('code-pv', this)" aria-label="Copiar" title="Copiar">
-            <svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            <svg class="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          </button>
-          <span class="codetext" id="code-pv">// Rota /lista-prioritaria — ao carregar a página (igual à raiz)
-window.dataLayer = window.dataLayer || [];
-window.dataLayer.push({ event: 'blackpass_page_view' });</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="tip">
-      <div class="ic">🔒</div>
-      <p><b>Dados pessoais só no evento de lead.</b> E-mail, nome e telefone vão apenas no
-      <code>blackpass_lead_success</code>, nunca em outros eventos ou na URL. Checkout e compra
-      <b>não precisam de mudança</b> — são medidos pela própria Hotmart.</p>
-    </div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap">
-    <div class="section-label">03</div>
-    <h2>Testar antes de avisar</h2>
-    <p class="intro">Depois de publicar no Lovable:</p>
-    <div class="step">
-      <div class="num">1</div>
-      <div class="body">
-        <h3>Conferir se o GTM carregou</h3>
-        <p>DevTools (F12) → aba <b>Network</b> → filtrar por <code>gtm.js</code>. Tem que aparecer
-        <code>gtm.js?id=GTM-KX2QL6XG</code> uma única vez, na raiz e na <code>/lista-prioritaria</code>.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="num">2</div>
-      <div class="body">
-        <h3>Fazer um cadastro de teste e olhar o dataLayer</h3>
-        <p>Usar dados falsos (ex.: nome "Teste Dev", e-mail de teste). Depois rodar no console:</p>
-        <div class="codebox ">
-          <button class="iconbtn" onclick="copyBlock('code-test', this)" aria-label="Copiar" title="Copiar">
-            <svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            <svg class="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          </button>
-          <span class="codetext" id="code-test">// Console do navegador (F12), depois de um cadastro de teste:
-window.dataLayer.filter(e =&gt; e.event &amp;&amp; String(e.event).startsWith('blackpass'))</span>
-        </div>
-        <p style="margin-top:10px">O <code>blackpass_lead_success</code> tem que aparecer <b>uma vez</b>, com
-        <code>event_id</code>, <code>email</code>, <code>name</code> e <code>phone</code> (+55…) preenchidos.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="num">3</div>
-      <div class="body">
-        <h3>Avisar a Brito Mídias</h3>
-        <p>Com o GTM no ar, a Brito Mídias valida os disparos no modo de pré-visualização e publica o container.
-        Aproveite e conte <b>onde o lead fica salvo</b> (tabela do Supabase, ferramenta de e-mail, CRM).</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="block soft">
-  <div class="wrap">
-    <div class="section-label">04</div>
-    <h2>Prompt pronto para o Lovable</h2>
-    <p class="intro">Copie e cole no chat do projeto no Lovable. Ele já leva os códigos e todas as regras acima.</p>
-    <div class="codebox prompt">
+        <h3>Copie o prompt abaixo e cole no chat do projeto no Lovable</h3>
+        <p>Ele instala o GTM e ajusta o evento de cadastro. Não mexe em layout, textos, formulário nem checkout.</p>
+        <div class="codebox prompt">
           <button class="iconbtn" onclick="copyBlock('code-prompt', this)" aria-label="Copiar" title="Copiar">
             <svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
             <svg class="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -391,15 +223,130 @@ Garanta window.dataLayer = window.dataLayer || [] antes de qualquer push.
 
 No final, me mostre a lista de arquivos alterados e um resumo do que mudou.</span>
         </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">2</div>
+      <div class="body">
+        <h3>Publique no Lovable</h3>
+        <p>Confira o resumo do que o Lovable alterou e clique em <b>Publish</b>. Sem publicar, nada vai para o ar.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">3</div>
+      <div class="body">
+        <h3>Avise a Brito Mídias</h3>
+        <p>Mande um "publicado" e conte <b>onde o lead fica salvo</b> (tabela do Supabase, ferramenta de e-mail, CRM).
+        Os testes e a publicação do GTM ficam com a gente.</p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <p>Deu algum erro no Lovable ou ficou dúvida? Fala com a equipe de tráfego pago da Brito Mídias.</p>
+      <a class="btn" href="mailto:rafael@britomidias.com.br">Falar com Rafael</a>
+    </div>
+  </div>
+</section>
+
+<section class="block soft">
+  <div class="wrap">
+    <span class="who bm">Brito Mídias faz depois</span>
+    <h2>Validação e publicação</h2>
+    <ul class="checklist">
+      <li><b>1.</b> Conferir se o GTM carregou uma única vez nas duas páginas.</li>
+      <li><b>2.</b> Cadastro de teste com dados falsos e checagem do evento <code>blackpass_lead_success</code> (event_id, email, name, phone).</li>
+      <li><b>3.</b> Teste no modo de pré-visualização do GTM e no "Testar eventos" do Meta.</li>
+      <li><b>4.</b> Publicação do container e criação das conversões de Lead (página A e B).</li>
+    </ul>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
-    <div class="cta">
-      <p>Dúvida em algum passo ou o teste não bateu? Fala com a equipe de tráfego pago da Brito Mídias.</p>
-      <a class="btn" href="mailto:rafael@britomidias.com.br">Falar com Rafael</a>
-    </div>
+    <div class="section-label">Referência técnica</div>
+    <h2>O que o prompt faz (caso precise fazer à mão)</h2>
+    <p class="intro">Não é preciso ler esta parte se o prompt funcionar. Fica aqui para conferência ou para aplicar manualmente.</p>
+    <details class="ref">
+      <summary>Ver os códigos</summary>
+      <div class="step">
+        <div class="num">A</div>
+        <div class="body">
+          <h3>GTM no <code>&lt;head&gt;</code> do layout raiz</h3>
+          <p>No TanStack Start, no <code>head()</code> da rota raiz (ex.: <code>src/routes/__root.tsx</code>); se houver <code>index.html</code>, no <code>&lt;head&gt;</code> dele. Um container só, carregado uma única vez.</p>
+          <div class="codebox ">
+          <button class="iconbtn" onclick="copyBlock('code-head', this)" aria-label="Copiar" title="Copiar">
+            <svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <svg class="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </button>
+          <span class="codetext" id="code-head">&lt;!-- Google Tag Manager --&gt;
+&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KX2QL6XG');&lt;/script&gt;
+&lt;!-- End Google Tag Manager --&gt;</span>
+        </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">B</div>
+        <div class="body">
+          <h3>GTM logo depois da abertura do <code>&lt;body&gt;</code></h3>
+          <div class="codebox ">
+          <button class="iconbtn" onclick="copyBlock('code-body', this)" aria-label="Copiar" title="Copiar">
+            <svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <svg class="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </button>
+          <span class="codetext" id="code-body">&lt;!-- Google Tag Manager (noscript) --&gt;
+&lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX2QL6XG"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+&lt;!-- End Google Tag Manager (noscript) --&gt;</span>
+        </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">C</div>
+        <div class="body">
+          <h3>Campos no evento <code>blackpass_lead_success</code></h3>
+          <p>Só depois que o servidor confirmar o cadastro. Dados pessoais vão apenas neste evento.</p>
+          <div class="codebox ">
+          <button class="iconbtn" onclick="copyBlock('code-lead', this)" aria-label="Copiar" title="Copiar">
+            <svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <svg class="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </button>
+          <span class="codetext" id="code-lead">// Só depois que o servidor confirmar o cadastro com sucesso
+const eventId = crypto.randomUUID(); // gerar UMA vez por cadastro
+
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  event: 'blackpass_lead_success',
+  event_id: eventId,                    // único por cadastro
+  email: email.trim().toLowerCase(),    // e-mail digitado
+  name: nome.trim(),                    // nome digitado
+  phone: '+' + (ddi + telefone).replace(/\D/g, '') // ex.: +5511999998888
+  // manter aqui os demais campos que o evento já envia hoje
+});</span>
+        </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">D</div>
+        <div class="body">
+          <h3>Page view na <code>/lista-prioritaria</code></h3>
+          <div class="codebox ">
+          <button class="iconbtn" onclick="copyBlock('code-pv', this)" aria-label="Copiar" title="Copiar">
+            <svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <svg class="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </button>
+          <span class="codetext" id="code-pv">// Rota /lista-prioritaria — ao carregar a página (igual à raiz)
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({ event: 'blackpass_page_view' });</span>
+        </div>
+        </div>
+      </div>
+    </details>
   </div>
 </section>
 
